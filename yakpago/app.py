@@ -14,4 +14,4 @@ def postgresql_page():
     return jsonify(data)    #쿼리문으로 반환된 데이터를 json 포맷으로 해당 라우팅 경로에 출력
 
 if __name__ == "__main__":
-    app.run(debug=True);
+    app.run(debug=True)
