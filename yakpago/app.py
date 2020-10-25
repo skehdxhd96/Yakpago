@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, render_template, request
+from flask_bootstrap import Bootstrap
 from db_model import postgresql
 from model import model
 
 app = Flask(__name__)
+Bootstrap(app)
 
 #단순히 psycopq2를 활용하여 DB 연동이 잘 됐는지 확인하기 위한 테스트코드. 
 @app.route('/postgresql_test')
@@ -16,12 +18,19 @@ def main_page():
     if request.method=="GET":
         return render_template('index.html')
     if request.method=="POST":
-        age = request.form['age']
-        weight = request.form['weight']
-        disease = request.form['disease']
-        result = model.printInputValue(age, weight, disease)
+        input_form = request.form
+        pregnant = input_form.get('pregnant')
+        if pregnant:
+            pregnant = True 
+        else:
+            pregnant = False
+        result = model.printInputValue(input_form['age'], input_form['weight'], input_form['disease'], pregnant)
         print(result)
         return render_template('index.html')
+
+@app.route('/index')
+def test_page():
+    return render_template("index copy.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
