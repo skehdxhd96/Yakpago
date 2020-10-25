@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../images/favicon.png">
+
+    <title>Expose</title>
+
+    <!-- Bootstrap core CSS
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="bootstrap/js/html5shiv.js"></script>
+    <script src="bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#topnav">
+
+<div class="navbar navbar-inverse navbar-fixed-top" id="topnav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+       
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">YAKPAGO</a></li>
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Searching</a></li>
+                <li><a href="#pricing">Result</a></li>
+
+            </ul>
+
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron" id="home">
+    <div class="container">
+        <div class="media">
+            <a href="#" class="pull-right"><img class="media-object" src="../images/Finder_256.png"/></a>
+
+            <div class="media-body">
+                <div class="col-md-11">
+                    <h1 class="title strong">YAKPAGO</h1>
+                    <h3>Your Only Pharmacist</h3>
+
+                    <p> 바쁜 일상 속에 약국을 들리기 어려운 현대인들을 위한 ML기반 진단 시스템. 회사에서도 집에서도 당신만의 약사를 만나보세요. </p>
+
+                    <p><a class="btn btn-success btn-lg">진단하기 <i class="icon icon-angle-center"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="services">
+    <!-- Example row of columns -->
+    <div class="row features">
+        <div class="col-lg-4 text-center">
+            <div class="single-fet">
+                <div>
+                <span class="icon-stack icon-4x">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-ok icon-light"></i>
+</span>
+                </div>
+                <h2>With <span style="color:#248822">Yakpago</span></h2>
+
+                <p>약파고 스마트 의약품 추천 서비스는 언제 어디서든 PC,모바일에서 모두 사용 가능한 편리하고 쉽게 접근 가능한 서비스입니다. 또한 수집된 개인정보는 진단의 목적을 위해 처리되며, 
+                   이외의 용도로는 사용되지 않습니다 </p>
+
+            </div>
+        </div>
+        <div class="col-lg-4 text-center">
+            <div class="single-fet">
+                <div>
+                <span class="icon-stack icon-4x">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-laptop icon-light"></i>
+</span>
+                </div>
+                <h2>Fully <span style="color:#248822">Responsive</span></h2>
+
+                <p>약파고 스마트 의약품 추천 서비스는 입력한 정보를 기반으로 즉각적으로 진단 후 결과를 바로 확인할 수 있도록 제공합니다. </p>
+
+            </div>
+        </div>
+        <div class="col-lg-4 text-center">
+            <div class="single-fet">
+                <div>
+                <span class="icon-stack icon-4x">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-download-alt icon-light"></i>
+</span>
+                </div>
+                <h2>And Totally <span style="color:#248822">Free</span></h2>
+
+                <p>약파고 스마트 의약품 추천 서비스는 별도의 요금 없이 누구나 무료로 사용할 수 있는 제품입니다. 
+                    경제적 문제나 사회적으로 어려운 위치에 있는 사람들을 위한 의료 기능 탑재하고 있습니다. </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+</div>
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <div class="alert alert-success hidden" id="contactSuccess">
+                    <strong>Success!</strong> Your message has been sent to us.
+                </div>
+
+                <div class="alert alert-error hidden" id="contactError">
+                    <strong>Error!</strong> There was an error sending your message.
+                </div>
+
+                <h4 class="short text-center"><strong>당신의 정보를 입력하세요</strong></h4>
+
+                <br>
+                <form class="clearfix" accept-charset="utf-8" method="get" action="#">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label for="name">나이</label>
+                            <input type="text" placeholder="" value="" name="name" id="name"
+                                   class="form-control input-lg">
+                        </div>
+
+                        <div class="col-sm-6 form-group">
+                            <label for="email">체중</label>
+                            <input type="email" placeholder="" value="" name="email" id="email"
+                                   class="form-control input-lg">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="email">기저질환</label>
+                            <input type="email" placeholder="" value="" name="email" id="email"
+                                   class="form-control input-lg">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <div class="symptom">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                  현재 증상을 선택하시오
+                                  <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">가정상비약</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">감기약</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">근골격제</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">대사질환제</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">비뇨생식기약</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">비타민제</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">산부인과약</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">소화기관약</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">수액류</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">신경,신경정신과약</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">심장</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">안과</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">알레르기</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">외용제</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">이비과</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">자양강장제</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">치과</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">치질약</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">항암제</a></li>
+                                  
+                                  
+                                </ul>
+                              </div>
+
+                              <br>
+                              <div class="subSymptom">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                  상세 증상을 선택하시오
+                                  <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">가정상비약</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">감기약</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">근골격제</a></li>
+                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">대사질환제</a></li>
+                                  
+                                  
+                                </ul>
+                              </div>
+
+                              <br>
+                              <div class="pregent">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 임신여부
+                                  </label>
+                              </div>
+                            
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-10 col-lg-8">
+                                <form class="card card-sm">
+                                    <div class="card-body row no-gutters align-items-center">
+                                        <div class="col-auto">
+                                            <i class="fas fa-search h4 text-body"></i>
+                                        </div>
+                                        <!--end of col-->
+                                        <div class="col">
+                                            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
+                                        </div>
+                                        <!--end of col-->
+                                        <div class="col-auto">
+                                            <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                        </div>
+                                        <!--end of col-->
+                                    </div>
+                                </form>
+                            </div>
+                            <!--end of col-->
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+                    <table id="myTable">
+                        <tr class="header">
+                            <th style="width:60%;">Name</th>
+                            <th style="width:40%;">Country</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Berglunds snabbkop</td>
+                            <td>Sweden</td>
+                        </tr>
+                        <tr>
+                            <td>Island Trading</td>
+                            <td>UK</td>
+                        </tr>
+                        <tr>
+                            <td>Koniglich Essen</td>
+                            <td>Germany</td>
+                        </tr>
+                    </table>
+                 <!--디비에서 가져온거 아니고 html창에서 입력받은값임-->
+        
+
+                        
+                    </div>
+
+                    <br>
+                    <button class="btn btn-success btn-xlg" type="submit">입력 완료</button>
+                </form>
+            </div>
+            <div class="col-md-offset-1 col-md-5">
+                <br/>
+                <h4 class="pull-top">Get in <strong>touch</strong></h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet
+                    varius. In eu ipsum vitae velit congue iaculis vitae at risus.</p>
+
+                <hr>
+
+                <h4>The <strong>Office</strong></h4>
+                <ul class="unstyled">
+                    <li><i class="icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United
+                        States
+                    </li>
+                    <li><i class="icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>
+                    <li><i class="icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="pricing" id="pricing">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 pricing-intro">
+                <h2 class="page-headline large text-center">Tell your projects awesome story.</h2>
+
+                <p class="text-center">Tell your projects awesome story. Tell your projects awesome story. Tell your
+                    projects awesome story. Tell your projects awesome story.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row pricing-table">
+            <div class="col-md-4">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><h3 class="text-center">DEV PLAN</h3></div>
+                    <div class="panel-body text-center">
+                        <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                    </ul>
+                    <div class="panel-footer">
+                        <a class="btn btn-lg btn-block btn-danger"
+                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                            NOW!</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><h3 class="text-center">PRO PLAN</h3></div>
+                    <div class="panel-body text-center">
+                        <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                    </ul>
+                    <div class="panel-footer">
+                        <a class="btn btn-lg btn-block btn-info"
+                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                            NOW!</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-success">
+                    <div class="panel-heading"><h3 class="text-center">FREE PLAN</h3></div>
+                    <div class="panel-body text-center">
+                        <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                    </ul>
+                    <div class="panel-footer">
+                        <a class="btn btn-lg btn-block btn-success"
+                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                            NOW!</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
+<section class="gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">For Your Better Life</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<br>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-ribbon" style="right: 0">
+                <h3 class="title" style="margin: 0;padding: 5px 10px">Thank <span>You</span></h3>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <p>YAKPAGO</p>
+                </div>
+                <div class="col-md-5">
+                    <p>&copy; Copyright 2013 by Template Eden. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-5">
+                    <nav id="footer-menu">
+                        <ul>
+                            <li><a href="#">FAQ's</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
