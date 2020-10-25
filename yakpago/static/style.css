@@ -209,7 +209,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .jumbotron{
-    background: url(../images/intro-bg.jpg);
+    background: url(images/intro-bg.jpg);
     color: #ffffff;
     background-attachment: fixed;
 }
@@ -275,7 +275,7 @@ section.gray h3{
 }
 
 section.about{
-    background: url(../images/bg.jpg);
+    background: url(images/bg.jpg);
     min-height: 400px;
     position: relative;
 }
@@ -517,7 +517,7 @@ img{
 }
 
 section.contact{
-    background: #fcfbfa url(../images/map-bottom.png);
+    background: #fcfbfa url(images/map-bottom.png);
     min-height: 400px;
     background-size:auto 100%;
     padding-top: 30px;
