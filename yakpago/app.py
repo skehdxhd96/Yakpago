@@ -1,17 +1,27 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, request
 from db_model import postgresql
+from model import model
 
 app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return "<h1>This is Yakpago project!</h1>"
 
 #단순히 psycopq2를 활용하여 DB 연동이 잘 됐는지 확인하기 위한 테스트코드. 
 @app.route('/postgresql_test')
 def postgresql_page():
     data = postgresql.postgresql_test()
     return jsonify(data)    #쿼리문으로 반환된 데이터를 json 포맷으로 해당 라우팅 경로에 출력
+
+#입력값 받아와 model.py(모델링 코드 넣을 곳)로 넘겨줌. 확인을 위해 model.py에 printInputValue 함수를 만들어 출력해줌.
+@app.route('/', methods = ['GET', 'POST'])
+def main_page():
+    if request.method=="GET":
+        return render_template('index.html')
+    if request.method=="POST":
+        age = request.form['age']
+        weight = request.form['weight']
+        disease = request.form['disease']
+        result = model.printInputValue(age, weight, disease)
+        print(result)
+        return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

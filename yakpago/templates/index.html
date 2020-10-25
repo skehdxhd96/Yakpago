@@ -9,8 +9,8 @@
 
     <title>Expose</title>
 
-    <!-- Bootstrap core CSS
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+    <!-- Bootstrap core CSS-->
+    <link href="../static/bootstrap/css/bootstrap.css" rel="stylesheet"> 
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
@@ -147,29 +147,29 @@
                 <h4 class="short text-center"><strong>당신의 정보를 입력하세요</strong></h4>
 
                 <br>
-                <form class="clearfix" accept-charset="utf-8" method="get" action="#">
+                <form class="clearfix" accept-charset="utf-8" method="POST" action="">
                     <div class="row">
                         <div class="col-sm-6 form-group">
-                            <label for="name">나이</label>
-                            <input type="text" placeholder="" value="" name="name" id="name"
+                            <label for="age">나이</label>
+                            <input type="text" placeholder="" value="" name="age" id=""
                                    class="form-control input-lg">
                         </div>
 
                         <div class="col-sm-6 form-group">
-                            <label for="email">체중</label>
-                            <input type="email" placeholder="" value="" name="email" id="email"
+                            <label for="weight">체중</label>
+                            <input type="text" placeholder="" value="" name="weight" id=""
                                    class="form-control input-lg">
                         </div>
                         <div class="col-sm-6 form-group">
-                            <label for="email">기저질환</label>
-                            <input type="email" placeholder="" value="" name="email" id="email"
+                            <label for="disease">기저질환</label>
+                            <input type="text" placeholder="" value="" name="disease" id=""
                                    class="form-control input-lg">
                         </div>
                         <div class="col-sm-6 form-group">
                             <div class="symptom">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
                                   현재 증상을 선택하시오
-                                  <span class="caret"></span>
+                                    <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">가정상비약</a></li>
@@ -191,9 +191,11 @@
                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">치과</a></li>
                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">치질약</a></li>
                                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">항암제</a></li>
-                                  
+                                
                                   
                                 </ul>
+                            
+                               
                               </div>
 
                               <br>
@@ -223,22 +225,22 @@
 
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8">
-                                <form class="card card-sm">
+                                <!-- <form class="card card-sm">
                                     <div class="card-body row no-gutters align-items-center">
                                         <div class="col-auto">
                                             <i class="fas fa-search h4 text-body"></i>
-                                        </div>
+                                        </div> -->
                                         <!--end of col-->
-                                        <div class="col">
+                                        <!-- <div class="col">
                                             <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
-                                        </div>
+                                        </div> -->
                                         <!--end of col-->
-                                        <div class="col-auto">
+                                        <!-- <div class="col-auto">
                                             <button class="btn btn-lg btn-success" type="submit">Search</button>
-                                        </div>
+                                        </div> -->
                                         <!--end of col-->
-                                    </div>
-                                </form>
+                                    <!-- </div>
+                                </form> -->
                             </div>
                             <!--end of col-->
                         </div>
@@ -438,7 +440,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/js/jquery.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
