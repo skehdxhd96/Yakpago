@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../static/images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
 
     <title>Expose</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../static/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -54,16 +54,18 @@
 <div class="jumbotron" id="home">
     <div class="container">
         <div class="media">
-            <a href="#" class="pull-right"><img class="media-object" src="../static/images/Finder_256.png"/></a>
+            <!--<a href="#" class="pull-right"><img class="media-object" src="images/Finder_256.png"/></a>-->
 
             <div class="media-body">
                 <div class="col-md-11">
-                    <h1 class="title strong">YAKPAGO</h1>
-                    <h3>Your Only Pharmacist</h3>
+                    <h1 class="title strong">
+                        <span style="color:#ffffff">YAKPAGO</span></h1>
+                    <h3><span style="color:#248822"><b>Your Only Pharmacist</b></span></h3>
 
-                    <p> 바쁜 일상 속에 약국을 들리기 어려운 현대인들을 위한 ML기반 진단 시스템. 회사에서도 집에서도 당신만의 약사를 만나보세요. </p>
+                    <p> 바쁜 일상 속에 약국을 들리기 어려운 현대인들을 위한 ML기반 진단 시스템. 
+                        <br>회사에서도 집에서도 당신만의 약사를 만나보세요. </p>
 
-                    <p><a href="#contact" class="btn btn-success btn-lg">진단하기 <i class="icon icon-angle-center"></i></a></p>
+                    <p><a class="btn btn-success btn-lg">진단하기 <i class="icon icon-angle-center"></i></a></p>
                 </div>
             </div>
         </div>
@@ -147,22 +149,22 @@
                 <h4 class="short text-center"><strong>당신의 정보를 입력하세요</strong></h4>
 
                 <br>
-                <form class="clearfix" accept-charset="utf-8" method="POST" action="">
+                <form class="clearfix" accept-charset="utf-8" method="get" action="#">
                     <div class="row">
                         <div class="col-sm-6 form-group">
-                            <label for="age">나이</label>
-                            <input type="text" placeholder="" value="" name="age" id=""
+                            <label for="name">나이</label>
+                            <input type="text" placeholder="" value="" name="name" id="name"
                                    class="form-control input-lg">
                         </div>
 
                         <div class="col-sm-6 form-group">
-                            <label for="weight">체중</label>
-                            <input type="text" placeholder="" value="" name="weight" id=""
+                            <label for="email">체중</label>
+                            <input type="email" placeholder="" value="" name="email" id="email"
                                    class="form-control input-lg">
                         </div>
                         <div class="col-sm-6 form-group">
-                            <label for="disease">기저질환</label>
-                            <input type="text" placeholder="" value="" name="disease" id=""
+                            <label for="email">기저질환</label>
+                            <input type="email" placeholder="" value="" name="email" id="email"
                                    class="form-control input-lg">
                         </div>
                         <div class="col-sm-6 form-group">
@@ -215,33 +217,33 @@
                               <br>
                               <div class="pregent">
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
-                                </label>
+                                    <input type="checkbox" id="inlineCheckbox1" value="option1"> 임신여부
+                                  </label>
                               </div>
                             
                         </div>
 
-                        <!-- <div class="row justify-content-center">
+                        <div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8">
                                 <form class="card card-sm">
                                     <div class="card-body row no-gutters align-items-center">
                                         <div class="col-auto">
                                             <i class="fas fa-search h4 text-body"></i>
-                                        </div> -->
+                                        </div>
                                         <!--end of col-->
-                                        <!-- <div class="col">
+                                        <div class="col">
                                             <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
-                                        </div> -->
+                                        </div>
                                         <!--end of col-->
-                                        <!-- <div class="col-auto">
+                                        <div class="col-auto">
                                             <button class="btn btn-lg btn-success" type="submit">Search</button>
-                                        </div> -->
+                                        </div>
                                         <!--end of col-->
-                                    <!-- </div>
+                                    </div>
                                 </form>
-                            </div> -->
+                            </div>
                             <!--end of col-->
-                        <!-- </div>
+                        </div>
                         
                     </div>
                     <div class="row">
@@ -268,19 +270,18 @@
                             <td>Koniglich Essen</td>
                             <td>Germany</td>
                         </tr>
-                    </table> -->
+                    </table>
                  <!--디비에서 가져온거 아니고 html창에서 입력받은값임-->
         
 
                         
-                    <!-- </div> -->
+                    </div>
 
                     <br>
                     <button class="btn btn-success btn-xlg" type="submit">입력 완료</button>
                 </form>
             </div>
-            <!-- 우선 여기서 해야할거 : 도로명 주소로 약 주성분 만들기 -->
-            <!-- <div class="col-md-offset-1 col-md-5">
+            <div class="col-md-offset-1 col-md-5">
                 <br/>
                 <h4 class="pull-top">Get in <strong>touch</strong></h4>
 
@@ -300,7 +301,7 @@
                 </ul>
 
 
-            </div> -->
+            </div>
 
 
         </div>
@@ -439,7 +440,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="../static/js/jquery.js"></script>
-<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
