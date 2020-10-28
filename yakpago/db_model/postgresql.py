@@ -9,8 +9,15 @@ conn = psycopg2.connect(
     password='yakpago723', 
     port='5432')
 
-cur1 = conn.cursor()
+curl = conn.cursor()
 
 def postgresql_test():
-    cur1.execute("SELECT * FROM medicineinfo WHERE item_seq=201907113;")    #쿼리문 작성
-    return cur1.fetchall()  #fetchall()은 해당 쿼리문에 대한 모든 내용을 반환, fetchone()은 해당 쿼리문에 대한 맨 첫번째 데이터만 반환.
+    curl.execute("SELECT * FROM medicineinfo WHERE item_seq=201907113;")    #쿼리문 작성
+    return curl.fetchall()  #fetchall()은 해당 쿼리문에 대한 모든 내용을 반환, fetchone()은 해당 쿼리문에 대한 맨 첫번째 데이터만 반환.
+
+#일반의약품 카테고리 항목을 select 해오는 함수 - 카테고리 대분류를 html파일에 표현하기 위해
+def select_category():
+    curl.execute("select distinct(category) from medicineinfo where etc_otc_code='일반의약품';") 
+    results = curl.fetchall()
+    categories = [result[0] for result in results[1:]]
+    return sorted(categories)
