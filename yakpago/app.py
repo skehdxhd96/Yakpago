@@ -16,7 +16,9 @@ def postgresql_page():
 @app.route('/', methods = ['GET', 'POST'])
 def main_page():
     if request.method=="GET":
-        return render_template('index.html')
+        categories = postgresql.select_category()
+
+        return render_template('index.html', categories=categories)
     if request.method=="POST":
         input_form = request.form
         pregnant = input_form.get('pregnant')
@@ -24,13 +26,10 @@ def main_page():
             pregnant = True 
         else:
             pregnant = False
-        result = model.printInputValue(input_form['age'], input_form['weight'], input_form['disease'], pregnant)
+        result = model.printInputValue(input_form['age'], input_form['weight'], input_form['disease'], pregnant, input_form['category'])
         print(result)
+        
         return render_template('index.html')
-
-@app.route('/index')
-def test_page():
-    return render_template("index copy.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
