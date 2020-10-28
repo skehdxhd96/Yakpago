@@ -1,3 +1,3 @@
-def printInputValue(age, weight, disease, pregnant):
-    result = {'age':age, 'weight':weight, 'disease':disease, 'pregnant':pregnant}
+def printInputValue(age, weight, disease, pregnant, category):
+    result = {'age':age, 'weight':weight, 'disease':disease, 'pregnant':pregnant, 'category':category}
     return result
