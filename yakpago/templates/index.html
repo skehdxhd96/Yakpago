@@ -168,11 +168,17 @@
                         </div>
                         
                         <div class="col-sm-6 form-group">
-                            <select class="form-control form-control-lg" name="category">
-                                <option selected="selected">약품 분류(대분류)</option>
+                            <select class="form-control form-control-lg" id="category" onchange="insertOptions('category', 'subcategory')" name="category" >
+                                <option value="category_init">약품 분류(대분류)</option>
                                 {% for category in categories%}
-                                <option>{{category}}</option>
+                                <option value="{{category}}">{{category}}</option>
                                 {% endfor %}
+                            </select>
+                        </div>
+
+                        <div class="col-sm-6 form-group">
+                            <select class="form-control form-control-lg" id="subcategory" name="subcategory" >
+                                <option>약품 분류(중분류)</option>
                             </select>
                         </div>
                         
@@ -598,4 +604,5 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="../static/js/jquery.js"></script>
 <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+<script src="../static/js/dynamic_selectbox.js"></script>
 </html>
