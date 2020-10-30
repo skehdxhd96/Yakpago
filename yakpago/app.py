@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 from flask_bootstrap import Bootstrap
+from flask_wtf import FlaskForm
 from db_model import postgresql
 from model import model
 
@@ -17,8 +18,8 @@ def postgresql_page():
 def main_page():
     if request.method=="GET":
         categories = postgresql.select_category()
-
         return render_template('index.html', categories=categories)
+
     if request.method=="POST":
         input_form = request.form
         pregnant = input_form.get('pregnant')
@@ -30,6 +31,19 @@ def main_page():
         print(result)
         
         return render_template('index.html')
+
+@app.route('/subcategory/<category>')
+def subcategory(category):
+    subcategories = postgresql.select_subcategory(category)
+    subcategoriesArray = []
+
+    for id, subcategory in enumerate(subcategories):
+        subcategoryObj = {}
+        subcategoryObj['id'] = id+1
+        subcategoryObj['subcategory'] = subcategory
+        subcategoriesArray.append(subcategoryObj)
+
+    return jsonify(subcategoriesArray)
 
 if __name__ == "__main__":
     app.run(debug=True)
