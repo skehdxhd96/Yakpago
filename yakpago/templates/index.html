@@ -21,6 +21,34 @@
     <script src="bootstrap/js/html5shiv.js"></script>
     <script src="bootstrap/js/respond.min.js"></script>
     <![endif]-->
+
+    <script type='text/javascript'>
+        function insertSubcategories() {
+            var category_select = document.getElementById('category');
+            var subcategory_select = document.getElementById('subcategory');
+
+            var category = category_select.value;
+            
+            if (category != "category_init") {
+                fetch ('/subcategory/' + category).then(function(response) {
+                    response.json().then(function(data) {
+                    let optionHTML = '';
+
+                    for (let subcategory of data) {
+                        optionHTML += "<option value='" + subcategory.subcategory + "'>" + subcategory.subcategory + "</option>";
+                    }
+                    subcategory_select.innerHTML = optionHTML;
+                    });
+                });
+            }
+
+            else {
+                let optionHTML = "<option value='category_init'>" + "약품 분류(중분류)" + "</option>";
+                subcategory_select.innerHTML = optionHTML;
+            }
+            
+        }
+    </script>
 </head>
 
 <body data-spy="scroll" data-target="#topnav">
@@ -168,75 +196,23 @@
                         </div>
                         
                         <div class="col-sm-6 form-group">
-                            <select class="form-control form-control-lg" id="category" onchange="insertOptions('category', 'subcategory')" name="category" >
+                            <select class="form-control form-control-lg" id="category" onchange="insertSubcategories();" name="category" >
                                 <option value="category_init">약품 분류(대분류)</option>
                                 {% for category in categories%}
                                 <option value="{{category}}">{{category}}</option>
                                 {% endfor %}
                             </select>
-                        </div>
-
-                        <div class="col-sm-6 form-group">
+                            <br>
                             <select class="form-control form-control-lg" id="subcategory" name="subcategory" >
-                                <option>약품 분류(중분류)</option>
+                                <option value="subcategory_init">약품 분류(중분류)</option>
                             </select>
                         </div>
-                        
-                        <!-- <div class="col-sm-6 form-group">
-                            <div class="symptom">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                  현재 증상을 선택하시오
-                                  <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">가정상비약</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">감기약</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">근골격제</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">대사질환제</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">비뇨생식기약</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">비타민제</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">산부인과약</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">소화기관약</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">수액류</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">신경,신경정신과약</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">심장</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">안과</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">알레르기</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">외용제</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">이비과</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">자양강장제</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">치과</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">치질약</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">항암제</a></li>
-                                  
-                                  
-                                </ul>
-                              </div>
 
-                              <br>
-                              <div class="subSymptom">
-                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                  상세 증상을 선택하시오
-                                  <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">가정상비약</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">감기약</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">근골격제</a></li>
-                                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">대사질환제</a></li>
-                                  
-                                  
-                                </ul>
-                              </div>
-
-                              <br>
-                              <div class="pregent">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
-                                </label>
-                              </div>
-                            
-                        </div> -->
+                        <div class="pregent">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
+                            </label>
+                        </div>
                         
                         <!-- <div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8">
@@ -287,15 +263,7 @@
                         </tr>
                     </table> -->
                  <!-- 디비에서 가져온거 아니고 html창에서 입력받은값임 -->
-        
 
-                        
-                    <!-- </div> -->
-                    <div class="pregent">
-                        <label class="checkbox-inline">
-                            <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
-                        </label>
-                    </div>
                     <br>
                     <button class="btn btn-success btn-xlg" type="submit">입력 완료</button>
                 </form>
