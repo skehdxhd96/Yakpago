@@ -21,3 +21,12 @@ def select_category():
     results = curl.fetchall()
     categories = [result[0] for result in results[1:]]
     return sorted(categories)
+
+def select_subcategory(sub_category="all"):
+    if sub_category=="all":
+        curl.execute("select distinct(sub_category) from medicineinfo where etc_otc_code='일반의약품';") 
+    else:
+        curl.execute("select distinct(sub_category) from medicineinfo where category='"+sub_category+"' and etc_otc_code='일반의약품';") 
+    results = curl.fetchall()
+    subcategories = [result[0] for result in results if result[0] is not None]
+    return sorted(subcategories)
