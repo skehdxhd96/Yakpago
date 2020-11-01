@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../static/images/favicon.png">
+
+    <title>Expose</title>
+
+    <!-- Custom styles for this template -->
+    <link href="../static/main.css" rel="stylesheet">
+    <link href="../static/style.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="bootstrap/js/html5shiv.js"></script>
+    <script src="bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#topnav">
+
+<div class="navbar navbar-inverse navbar-fixed-top" id="topnav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+       
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">YAKPAGO</a></li>
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Searching</a></li>
+                <li><a href="#pricing">Result</a></li>
+
+            </ul>
+
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron" id="home">
+    <div class="container">
+        <div class="media">
+            <!--<a href="#" class="pull-right"><img class="media-object" src="../static/images/Finder_256.png"/></a>-->
+
+            <div class="media-body">
+                <div class="col-md-11">
+                    <h1 class="title strong">
+                        <span style="color:#ffffff">YAKPAGO</span></h1>
+                    <h3><span style="color:#248822"><b>Your Only Pharmacist</b></span></h3>
+
+                    <p> 바쁜 일상 속에 약국을 들리기 어려운 현대인들을 위한 ML기반 진단 시스템. 
+                        <br>회사에서도 집에서도 당신만의 약사를 만나보세요. </p>
+
+                    <p><a class="btn btn-success btn-lg">진단하기 <i class="icon icon-angle-center"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="services">
+    <!-- Example row of columns -->
+    <div class="row features">
+        <div class="col-lg-4 text-center">
+            <div class="single-fet">
+                <div>
+                <span class="icon-stack icon-4x">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-ok icon-light"></i>
+</span>
+                </div>
+                <h2>With <span style="color:#248822">Yakpago</span></h2>
+
+                <p>약파고 스마트 의약품 추천 서비스는 언제 어디서든 PC,모바일에서 모두 사용 가능한 편리하고 쉽게 접근 가능한 서비스입니다. 또한 수집된 개인정보는 진단의 목적을 위해 처리되며, 
+                   이외의 용도로는 사용되지 않습니다 </p>
+
+            </div>
+        </div>
+        <div class="col-lg-4 text-center">
+            <div class="single-fet">
+                <div>
+                <span class="icon-stack icon-4x">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-laptop icon-light"></i>
+</span>
+                </div>
+                <h2>Fully <span style="color:#248822">Responsive</span></h2>
+
+                <p>약파고 스마트 의약품 추천 서비스는 입력한 정보를 기반으로 즉각적으로 진단 후 결과를 바로 확인할 수 있도록 제공합니다. </p>
+
+            </div>
+        </div>
+        <div class="col-lg-4 text-center">
+            <div class="single-fet">
+                <div>
+                <span class="icon-stack icon-4x">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-download-alt icon-light"></i>
+</span>
+                </div>
+                <h2>And Totally <span style="color:#248822">Free</span></h2>
+
+                <p>약파고 스마트 의약품 추천 서비스는 별도의 요금 없이 누구나 무료로 사용할 수 있는 제품입니다. 
+                    경제적 문제나 사회적으로 어려운 위치에 있는 사람들을 위한 의료 기능 탑재하고 있습니다. </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+</div>
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <div class="alert alert-success hidden" id="contactSuccess">
+                    <strong>Success!</strong> Your message has been sent to us.
+                </div>
+
+                <div class="alert alert-error hidden" id="contactError">
+                    <strong>Error!</strong> There was an error sending your message.
+                </div>
+
+                <h4 class="short text-center"><strong>당신의 정보를 입력하세요</strong></h4>
+                (<span id="input_neccesary">*</span> 는 필수사항)<br><br>
+
+                <form class="clearfix" accept-charset="utf-8" method="POST" action="/">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label for="medicine">필요한 약품 종류를 선택하세요</label>
+                            <select class="form-control form-control-lg" id="input_category" onchange="insertSubcategories()" name="category">
+                                <option value="category_all">모두 선택</option>
+                                {% for category in categories%}
+                                <option value="{{category}}">{{category}}</option>
+                                {% endfor %}
+                            </select>
+                            <br>
+                            <select class="form-control form-control-lg" id="input_subcategory" name="subcategory" >
+                                <option value="subcategory_all">모두 선택</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <span id="input_neccesary">*</span>
+                            <label for="age"> 나이(숫자만 입력)</label>
+                            <input type="text" placeholder="" value="" name="age" id="input_age" class="form-control input-lg"> 
+                            <p id="age_reg">숫자만 입력해주세요.</p>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <span id="input_neccesary">*</span>
+                            <label for="weight"> 체중(숫자만 입력, 소수점 불가능)</label>
+                            <input type="text" placeholder="" value="" name="weight" id="input_weight" class="form-control input-lg">
+                            <p id="weigt_reg">숫자만 입력해주세요.(소수점 불가능)</p>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="disease">기저질환</label>
+                            <input type="text" placeholder="" value="" name="disease" id="input_disease"
+                                   class="form-control input-lg">
+                        </div>
+                        <div class="pregent">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
+                            </label>
+                        </div>
+                        <!-- <div class="row justify-content-center">
+                            <div class="col-12 col-md-10 col-lg-8">
+                                <form class="card card-sm">
+                                    <div class="card-body row no-gutters align-items-center">
+                                        <div class="col-auto">
+                                            <i class="fas fa-search h4 text-body"></i>
+                                        </div> -->
+                                        <!--end of col-->
+                                        <!-- <div class="col">
+                                            <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
+                                        </div> -->
+                                        <!--end of col-->
+                                        <!-- <div class="col-auto">
+                                            <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                        </div> -->
+                                        <!--end of col-->
+                                    <!-- </div>
+                                </form>
+                            </div> -->
+                            <!--end of col-->
+                        <!-- </div>
+                        
+                    </div>
+                    <div class="row">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+                    <table id="myTable">
+                        <tr class="header">
+                            <th style="width:60%;">Name</th>
+                            <th style="width:40%;">Country</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Berglunds snabbkop</td>
+                            <td>Sweden</td>
+                        </tr>
+                        <tr>
+                            <td>Island Trading</td>
+                            <td>UK</td>
+                        </tr>
+                        <tr>
+                            <td>Koniglich Essen</td>
+                            <td>Germany</td>
+                        </tr>
+                    </table> -->
+                 <!-- 디비에서 가져온거 아니고 html창에서 입력받은값임 -->
+
+                    <br>
+                    <button class="btn btn-success btn-xlg" id="input_page_button" type="submit">입력 완료</button>
+                </form>
+            </div>
+            <!-- <div class="col-md-offset-1 col-md-5">
+                <br/>
+                <h4 class="pull-top">Get in <strong>touch</strong></h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet
+                    varius. In eu ipsum vitae velit congue iaculis vitae at risus.</p>
+
+                <hr>
+
+                <h4>The <strong>Office</strong></h4>
+                <ul class="unstyled">
+                    <li><i class="icon-map-marker"></i> <strong>Address:</strong> 1234 Street Name, City Name, United
+                        States
+                    </li>
+                    <li><i class="icon-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>
+                    <li><i class="icon-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a>
+                    </li>
+                </ul>
+
+
+            </div> -->
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="pricing" id="pricing">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 pricing-intro">
+                <h2 class="page-headline large text-center"> 결과 테이블</h2>
+
+                <p class="text-center">Tell your projects awesome story. Tell your projects awesome story. Tell your
+                    projects awesome story. Tell your projects awesome story.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row pricing-table">
+            <div class="col-md-4">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><h3 class="text-center">DEV PLAN</h3></div>
+                    <div class="panel-body text-center">
+                        <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                    </ul>
+                    <div class="panel-footer">
+                        <a class="btn btn-lg btn-block btn-danger"
+                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                            NOW!</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><h3 class="text-center">PRO PLAN</h3></div>
+                    <div class="panel-body text-center">
+                        <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                    </ul>
+                    <div class="panel-footer">
+                        <a class="btn btn-lg btn-block btn-info"
+                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                            NOW!</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-success">
+                    <div class="panel-heading"><h3 class="text-center">FREE PLAN</h3></div>
+                    <div class="panel-body text-center">
+                        <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                        <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                    </ul>
+                    <div class="panel-footer">
+                        <a class="btn btn-lg btn-block btn-success"
+                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                            NOW!</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+<section class="slider" id="features">
+    <div class="container">
+        <div class="inner-page">
+            <h2 class="page-headline large text-center">지도 보여주기</h2>
+
+            <p class="text-center">Tell your projects awesome story. Tell your projects awesome story. Tell your
+                projects awesome story. Tell your projects awesome story.</p>
+        </div>
+        <div class="row inner-page">
+            <div class="col-md-8 col-md-push-4 lazy-container loaded">
+                <!--<img data-original="images/mockup.png" src="images/mockup.png" alt="Looks great on every device"-->
+                <!--class="lazy">-->
+
+                <h2>Our <strong>Features</strong></h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                            <div class="feature-box-icon">
+                                <i class="icon-group"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="shorter">Customer Support</h4>
+
+                                <p class="tall">Lorem ipsum dolor sit amet, consectetur adip.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-box-icon">
+                                <i class="icon-file"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="shorter">HTML5 / CSS3 / JS</h4>
+
+                                <p class="tall">Lorem ipsum dolor sit amet, adip.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-box-icon">
+                                <i class="icon-google-plus"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="shorter">500+ Google Fonts</h4>
+
+                                <p class="tall">Lorem ipsum dolor sit amet, consectetur adip.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-box-icon">
+                                <i class="icon-adjust"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="shorter">Colors</h4>
+
+                                <p class="tall">Lorem ipsum dolor sit amet, consectetur adip.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-box">
+                            <div class="feature-box-icon">
+                                <i class="icon-film"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="shorter">Sliders</h4>
+
+                                <p class="tall">Lorem ipsum dolor sit amet, consectetur.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-box-icon">
+                                <i class="icon-magic small user"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="shorter">Icons</h4>
+
+                                <p class="tall">Lorem ipsum dolor sit amet, consectetur adip.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-box-icon">
+                                <i class="icon-reorder"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="shorter">Buttons</h4>
+
+                                <p class="tall">Lorem ipsum dolor sit, consectetur adip.</p>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-box-icon">
+                                <i class="icon-desktop"></i>
+                            </div>
+                            <div class="feature-box-info">
+                                <h4 class="shorter">Lightbox</h4>
+
+                                <p class="tall">Lorem sit amet, consectetur adip.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-md-pull-8">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+                            tellus ac cursus commodo, tortor </p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+                            tellus ac cursus commodo, tortor </p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+                            tellus ac cursus commodo, tortor </p>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+
+                        <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Fusce dapibus,
+                            tellus ac cursus commodo, tortor </p>
+                    </a>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">For Your Better Life</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<br>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-ribbon" style="right: 0">
+                <h3 class="title" style="margin: 0;padding: 5px 10px">Thank <span>You</span></h3>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <p>YAKPAGO</p>
+                </div>
+                <div class="col-md-5">
+                    <p>&copy; Copyright 2013 by Template Eden. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-5">
+                    <nav id="footer-menu">
+                        <ul>
+                            <li><a href="#">FAQ's</a></li>
+                            <li><a href="#">Sitemap</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/js/main.js"></script>
+<script src="../static/js/jquery.js"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js"></script>
+</html>
