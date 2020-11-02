@@ -9,46 +9,19 @@
 
     <title>Expose</title>
 
+    <!-- Custom styles for this template -->
+    <link href="../static/main.css" rel="stylesheet">
+    <link href="../static/style.css" rel="stylesheet">
+
     <!-- Bootstrap core CSS -->
     <link href="../static/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../static/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="bootstrap/js/html5shiv.js"></script>
     <script src="bootstrap/js/respond.min.js"></script>
     <![endif]-->
-
-    <script type='text/javascript'>
-        function insertSubcategories() {
-            var category_select = document.getElementById('category');
-            var subcategory_select = document.getElementById('subcategory');
-
-            var category = category_select.value;
-            
-            if (category != "category_init") {
-                fetch ('/subcategory/' + category).then(function(response) {
-                    response.json().then(function(data) {
-                    let optionHTML = '';
-
-                    for (let subcategory of data) {
-                        optionHTML += "<option value='" + subcategory.subcategory + "'>" + subcategory.subcategory + "</option>";
-                    }
-                    subcategory_select.innerHTML = optionHTML;
-                    });
-                });
-            }
-
-            else {
-                let optionHTML = "<option value='category_init'>" + "약품 분류(중분류)" + "</option>";
-                subcategory_select.innerHTML = optionHTML;
-            }
-            
-        }
-    </script>
 </head>
 
 <body data-spy="scroll" data-target="#topnav">
@@ -178,45 +151,45 @@
                 </div>
 
                 <h4 class="short text-center"><strong>당신의 정보를 입력하세요</strong></h4>
+                (<span id="input_neccesary">*</span> 는 필수사항)<br><br>
 
-                <form class="clearfix" accept-charset="utf-8" method="POST" action="">
+                <form class="clearfix" accept-charset="utf-8" method="POST" action="/">
                     <div class="row">
                         <div class="col-sm-6 form-group">
-                            <label for="age">나이</label>
-                            <input type="text" placeholder="" value="" name="age" id=""
-                                   class="form-control input-lg">
-                        </div>
-
-                        <div class="col-sm-6 form-group">
-                            <label for="weight">체중</label>
-                            <input type="text" placeholder="" value="" name="weight" id=""
-                                   class="form-control input-lg">
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <label for="disease">기저질환</label>
-                            <input type="text" placeholder="" value="" name="disease" id=""
-                                   class="form-control input-lg">
-                        </div>
-                        
-                        <div class="col-sm-6 form-group">
-                            <select class="form-control form-control-lg" id="category" onchange="insertSubcategories();" name="category" >
-                                <option value="category_init">약품 분류(대분류)</option>
+                            <label for="medicine">필요한 약품 종류를 선택하세요</label>
+                            <select class="form-control form-control-lg" id="input_category" onchange="insertSubcategories()" name="category">
+                                <option value="category_all">모두 선택</option>
                                 {% for category in categories%}
                                 <option value="{{category}}">{{category}}</option>
                                 {% endfor %}
                             </select>
                             <br>
-                            <select class="form-control form-control-lg" id="subcategory" name="subcategory" >
-                                <option value="subcategory_init">약품 분류(중분류)</option>
+                            <select class="form-control form-control-lg" id="input_subcategory" name="subcategory" >
+                                <option value="subcategory_all">모두 선택</option>
                             </select>
                         </div>
-
+                        <div class="col-sm-6 form-group">
+                            <span id="input_neccesary">*</span>
+                            <label for="age"> 나이(숫자만 입력)</label>
+                            <input type="text" placeholder="" value="" name="age" id="input_age" class="form-control input-lg"> 
+                            <p id="age_reg">숫자만 입력해주세요.</p>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <span id="input_neccesary">*</span>
+                            <label for="weight"> 체중(숫자만 입력, 소수점 불가능)</label>
+                            <input type="text" placeholder="" value="" name="weight" id="input_weight" class="form-control input-lg">
+                            <p id="weigt_reg">숫자만 입력해주세요.(소수점 불가능)</p>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="disease">기저질환</label>
+                            <input type="text" placeholder="" value="" name="disease" id="input_disease"
+                                   class="form-control input-lg">
+                        </div>
                         <div class="pregent">
                             <label class="checkbox-inline">
                                 <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
                             </label>
                         </div>
-                        
                         <!-- <div class="row justify-content-center">
                             <div class="col-12 col-md-10 col-lg-8">
                                 <form class="card card-sm">
@@ -268,7 +241,7 @@
                  <!-- 디비에서 가져온거 아니고 html창에서 입력받은값임 -->
 
                     <br>
-                    <button class="btn btn-success btn-xlg" type="submit">입력 완료</button>
+                    <button class="btn btn-success btn-xlg" id="input_page_button" type="submit">입력 완료</button>
                 </form>
             </div>
             
@@ -576,7 +549,7 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script src="../static/js/main.js"></script>
 <script src="../static/js/jquery.js"></script>
 <script src="../static/bootstrap/js/bootstrap.min.js"></script>
-<script src="../static/js/dynamic_selectbox.js"></script>
 </html>
