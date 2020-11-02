@@ -17,16 +17,6 @@ function insertSubcategories() {
     });
 }
 
-  
-function check(val, re) {
-    if(re.test(val)) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
 //입력페이지 나이값 유효성 검사 함수
 document.getElementById('input_age').onkeyup = function() {
     let input_age = document.getElementById('input_age');
