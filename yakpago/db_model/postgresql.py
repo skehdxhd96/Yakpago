@@ -30,3 +30,21 @@ def select_subcategory(sub_category="all"):
     results = curl.fetchall()
     subcategories = [result[0] for result in results if result[0] is not None]
     return sorted(subcategories)
+
+#입력 페이지에서 약품 성분 데이터를 가져오기 위해 약품명을 검색하고, 검색한 약품명과 일치하거나 포함되어 있는 약품을 select 하는 함수
+def select_medicinename(input_name):
+    query = "select item_name from medicineinfo where item_name like '%" + input_name + "%';"
+    curl.execute(query)
+    results = curl.fetchall()
+
+    results = [result[0] for result in results if result[0] is not None]
+    return results
+
+def select_ingredients(item_name, ingredient_list):
+    query = "select ingredient from main_ingredient where item_seq = (select item_seq from medicineinfo where item_name = '" + item_name + "')"
+    curl.execute(query)
+    results = curl.fetchall()
+    for result in results:
+        ingredient_list.append(result[0])
+    
+    return ingredient_list
