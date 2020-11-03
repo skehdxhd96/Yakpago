@@ -1,3 +1,5 @@
+var medicine_names = new Array();
+
 //입력페이지 Dynamic Select box 구현을 위한 javascript 함수
 function insertSubcategories() {
     var category_select = document.getElementById('input_category');
@@ -15,6 +17,49 @@ function insertSubcategories() {
         subcategory_select.innerHTML = optionHTML;
         });
     });
+}
+
+//입력페이지 약품명 검색하여 약품 이름을 프론트에서 표로 보여주는 javascript 함수
+document.getElementById('search_medicine').onclick = function() {
+    let input_medicine = document.getElementById('input_medicine').value;
+    let medicine_table = document.getElementById('medicine_table');
+
+    fetch('/input/' + input_medicine).then(function(response) {
+        response.json().then(function(data) {
+            let index = 1;
+            let optionHTML = '';
+            for (let medicine of data) {
+                optionHTML += "<tr> <th scope='row'>" + index + "</th> <td class='td_medicine' value='" + medicine + "'>" + medicine + "</td> </tr>";
+                index += 1;
+            }
+            medicine_table.innerHTML = optionHTML;
+        });
+    });
+    
+    return false;
+}
+
+//입력페이지 약품명 입력 부분 동적 이벤트 구현 함수(+form input 태그에 약품 이름 넣어주는 함수).
+document.getElementById('medicine_table').onmouseover = function() {
+    let td_medicines = document.getElementsByClassName('td_medicine');
+
+    for (let i=0; i<td_medicines.length; i++) {
+        td_medicines[i].onclick = function() {
+            if (this.style.backgroundColor == "") {
+                this.style.backgroundColor = '#5cb85c';
+                this.style.color = 'white';
+                medicine_names.push(this.outerText);
+            }
+            else {
+                this.style.backgroundColor = '';
+                this.style.color = 'black';
+                const index = medicine_names.indexOf(this.outerText);
+                if (index > -1) 
+                    medicine_names.splice(index, 1);
+            }
+        }
+    }
+    document.getElementById('input_ingredients').value = medicine_names;
 }
 
 //입력페이지 나이값 유효성 검사 함수
@@ -54,6 +99,7 @@ document.getElementById('input_weight').onkeyup = function() {
 document.getElementById('input_page_button').onclick = function() {
     let input_age = document.getElementById('input_age');
     let input_weight = document.getElementById('input_weight')
+    medicine_names = [];
 
     if (input_age.value=="") {
         alert("필수 사항 정보를 입력해주세요.");
