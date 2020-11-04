@@ -1,7 +1,10 @@
+from db_model import postgresql
+
 #입력값을 모델에 넘기기 전 예외처리 후 딕셔너리 형태로 입력값 변환 후 리턴.
 def printInputValue(form):
     select_query = "SELECT * FROM medicineinfo"
     form_dict = form.to_dict()
+    ingredient_list = []
 
     if (form_dict['category']!="category_all"):
         select_query += " WHERE category='"+form_dict['category']+"'"
@@ -14,4 +17,8 @@ def printInputValue(form):
     if ('pregnant' in form_dict)==False:
         form_dict['pregnant'] = False
 
+    form_dict['ingredients'] = list(form_dict['ingredients'].split(','))
+    for medicine in form_dict['ingredients']:
+        ingredient_list = postgresql.select_ingredients(medicine, ingredient_list)
+    form_dict['ingredients'] = list(set(ingredient_list))
     return form_dict

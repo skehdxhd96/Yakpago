@@ -33,5 +33,11 @@ def subcategory(category):
 
     return jsonify(subcategoriesArray)
 
+#입력 페이지에서 약품명 검색 후 테이블에 약품명을 보여주기 위해 필요한 라우팅 경로.
+@app.route('/input/<medicine_name>')
+def select_medicine(medicine_name):
+    names = postgresql.select_medicinename(medicine_name)
+    return jsonify(names)
+
 if __name__ == "__main__":
     app.run(debug=True)
