@@ -39,3 +39,8 @@
   .td_medicine {
       cursor: pointer;
   }
+
+  /*폰트적용*/
+  @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);  
+
+html,body {font-family:nanumgothic !important;}
