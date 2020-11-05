@@ -1,8 +1,17 @@
+
+/*
 @import url("//fonts.googleapis.com/css?family=Open+Sans:400,700,900,300");
 
-*, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+*,h2, h3, h4, h5, h6,.h2, .h3, .h4, .h5, .h6{
     font-family: 'Open Sans',serif;
     font-weight: 300;
+}
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+h1,.h1{
+    font-family: 'Righteous', cursive;
 }
 
 .breadcrumb {
@@ -521,6 +530,7 @@ section.contact{
     min-height: 400px;
     background-size:auto 100%;
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 section.contact ul{

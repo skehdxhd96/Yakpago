@@ -9,4 +9,38 @@
     color: red;
     display: none;
 }
+#input_medicine{
+    width:80%;
+    height:40px;
+    font-size:1em;
+    padding-left: 10px;
+    font-style: oblique;
+    display:inline;
+    outline:none;
+    box-sizing: border-box;
+    color:black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+#search_medicine{
+    width: 20%;
+    height:40px;
+    background-color:#5cb85c;
+    border:none;
+    background-color:#5cb85c;
+    font-size:1.2em;
+    color:#fff;
+    outline:none;
+    display:inline;
+    margin-left: -10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+  }
+  .td_medicine {
+      cursor: pointer;
+  }
 
+  /*폰트적용*/
+  @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);  
+
+html,body {font-family:nanumgothic !important;}
