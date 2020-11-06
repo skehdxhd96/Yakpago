@@ -46,9 +46,9 @@
             <ul class="nav navbar-nav">
                 <li><a href="#">YAKPAGO</a></li>
                 <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Searching</a></li>
-                <li><a href="#pricing">Result</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Searching">Searching</a></li>
+                <li><a href="#Result">Result</a></li>
 
             </ul>
 
@@ -72,14 +72,14 @@
                     <p> 바쁜 일상 속에 약국을 들리기 어려운 현대인들을 위한 ML기반 진단 시스템. 
                         <br>회사에서도 집에서도 당신만의 약사를 만나보세요. </p>
 
-                    <p><a class="btn btn-success btn-lg">진단하기 <i class="icon icon-angle-center"></i></a></p>
+                    <p><a href="#Searching" class="btn btn-success btn-lg">진단하기 <i class="icon icon-angle-center"></i></a></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container" id="services">
+<div class="container" id="Services">
     <!-- Example row of columns -->
     <div class="row features">
         <div class="col-lg-4 text-center">
@@ -137,7 +137,7 @@
 
 </div>
 
-<section class="contact" id="contact">
+<section class="contact" id="Searching">
     <div class="container">
         <div class="row">
             <h4 class="short text-center"><strong>당신의 정보를 입력하세요</strong></h4>
@@ -146,94 +146,65 @@
             <form class="clearfix" accept-charset="utf-8" method="POST" action="/">
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- <div class="layer">
-                            <span class="content"> -->
-                                <div class="col-sm-12 form-group">
-                                    <label for="medicine">필요한 약품 종류를 선택하세요</label>
-                                    <select class="form-control form-control-lg" id="input_category" onchange="insertSubcategories()" name="category">
-                                        <option value="category_all">모두 선택</option>
-                                        {% for category in categories%}
-                                        <option value="{{category}}">{{category}}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <br>
-                                    <select class="form-control form-control-lg" id="input_subcategory" name="subcategory" >
-                                        <option value="subcategory_all">모두 선택</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <label for="age"><span id="input_neccesary">*</span> 나이(숫자만 입력)</label>
-                                    <input type="text" placeholder="" value="" name="age" id="input_age" class="form-control input-lg"> 
-                                    <p id="age_reg">숫자만 입력해주세요.</p>
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <label for="weight"><span id="input_neccesary">*</span> 체중(숫자만 입력, 소수점 불가능)</label>
-                                    <input type="text" placeholder="" value="" name="weight" id="input_weight" class="form-control input-lg">
-                                    <p id="weigt_reg">숫자만 입력해주세요.(소수점 불가능)</p>
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <label for="disease">기저질환</label>
-                                    <input type="text" placeholder="" value="" name="disease" id="input_disease" class="form-control input-lg">
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <label for="pregnant">임신 중이면 체크해주세요.</label><br>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
-                                    </label>
-                                </div>
-                            <!-- </span>
-                        </div>  layer -->
+                        <div class="col-sm-12 form-group">
+                            <label for="medicine">필요한 약품 종류를 선택하세요</label>
+                            <select class="form-control form-control-lg" id="input_category" onchange="insertSubcategories()" name="category">
+                                <option value="category_all">모두 선택</option>
+                                    {% for category in categories%}
+                                    <option value="{{category}}">{{category}}</option>
+                                    {% endfor %}
+                            </select>
+                            <br>
+                            <select class="form-control form-control-lg" id="input_subcategory" name="subcategory" >
+                                <option value="subcategory_all">모두 선택</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="weight"><span id="input_neccesary">*</span> 체중(숫자만 입력, 소수점 불가능)</label>
+                            <input type="text" placeholder="" value="" name="weight" id="input_weight" class="form-control input-lg">
+                            <p id="weigt_reg">숫자만 입력해주세요.(소수점 불가능)</p>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="disease">기저질환이 있다면 입력해주세요.</label>
+                            <input type="text" placeholder="" value="" name="disease" id="input_disease" class="form-control input-lg">
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label for="pregnant">임신 중이면 체크해주세요.</label><br>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
+                            </label>
+                        </div>
                     </div>  <!--col-md-6-->
                     <div class="col-md-6">
-                        <!-- <div class="layer">
-                            <span class="content"> -->
-                                <!-- <div class="row justify-content-center">
-                                    <div class="col-12 col-md-10 col-lg-8">
-                                        <div class="card-body row no-gutters align-items-center">
-                                            <div class="col-auto">
-                                                <i class="fas fa-search h4 text-body"></i>
-                                            </div>
-                                            <div class="col">
-                                                <input class="form-control form-control-lg form-control-borderless" type="text" placeholder="Search topics or keywords">
-                                            </div>
-                                            <div class="col-auto">
-                                                <button class="btn btn-lg btn-success" type="submit">Search</button>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> -->
-                                <div class="col-sm-12 form-group">
-                                    <label for="disease">현재 복용중인 약품명을 입력해주세요</label>
-                                    <input id="input_medicine" type="text" name="" value="" placeholder="약품명 입력">
-                                    <input id="search_medicine" type="button" name="" value="검색">
-                                </div>
-                                <div class="col-sm-12 form-group">
-                                    <div class="table-responsive-md" style="height:220px; overflow-y:auto">
-                                        <table class="table" id="medicine_table">
-                                            <tbody>
-                                              <tr>
-                                                <th scope="row">1</th>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row">2</th>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row">3</th>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row">4</th>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row">5</th>
-                                              </tr>
-                                            </tbody>
-                                          </table>
-                                    </div>
-                                    <input style="display:none;" type="text" placeholder="" value="" name="ingredients" id="input_ingredients" class="form-control input-lg">
-                                </div>
-                            <!-- </span>
-                        </div> -->
+                        <div class="col-sm-12 form-group">
+                            <label for="disease">현재 복용중인 약품명을 입력해주세요</label>
+                            <input id="input_medicine" type="text" name="" value="" placeholder="약품명 입력">
+                            <input id="search_medicine" type="button" name="" value="검색">
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <div class="table-responsive-md" style="height:220px; overflow-y:auto">
+                                <table class="table" id="medicine_table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <input style="display:none;" type="text" placeholder="" value="" name="ingredients" id="input_ingredients" class="form-control input-lg">
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -244,8 +215,7 @@
     </div>
 </section>
 
-<section class="pricing" id="pricing">
-
+<section class="pricing" id="Result">
     <div class="container">
         <div class="row">
             <div class="col-md-12 pricing-intro">
@@ -253,6 +223,16 @@
 
                 <p class="text-center">Tell your projects awesome story. Tell your projects awesome story. Tell your
                     projects awesome story. Tell your projects awesome story.</p>
+
+                {% if scroll %} 
+                    <script> 
+                        document.getElementById('{{ scroll }}').scrollIntoView(); 
+                        //or 
+                        document.location.hash = '#' + '{{ scroll }}'; 
+                    </script> 
+                
+                    {{result['weight']}}
+                {% endif %}
             </div>
         </div>
     </div>
