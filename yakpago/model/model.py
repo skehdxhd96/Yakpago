@@ -11,7 +11,7 @@ def printInputValue(form):
         if (form_dict['subcategory']!="subcategory_all"):
             select_query += " and sub_category='"+form_dict['subcategory']+"'"
     
-    form_dict['age'] = int(form_dict['age'])
+    # form_dict['age'] = int(form_dict['age'])
     form_dict['weight'] = int(form_dict['weight'])
 
     if ('pregnant' in form_dict)==False:
