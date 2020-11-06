@@ -8,16 +8,31 @@ app = Flask(__name__)
 Bootstrap(app)
 
 #입력값 받아와 model.py(모델링 코드 넣을 곳)로 넘겨줌. 확인을 위해 model.py에 printInputValue 함수를 만들어 출력해줌.
-@app.route('/', methods = ['GET', 'POST'])
+# @app.route('/', methods = ['GET', 'POST'])
+# def main_page():
+#     categories = postgresql.select_category()
+
+#     if request.method=="POST":
+#         input_form = request.form
+#         result = model.printInputValue(input_form)
+#         print(result)
+        
+#     return render_template('main.html', categories=categories)
+
+@app.route('/')
 def main_page():
     categories = postgresql.select_category()
-
-    if request.method=="POST":
-        input_form = request.form
-        result = model.printInputValue(input_form)
-        print(result)
         
     return render_template('main.html', categories=categories)
+
+@app.route('/', methods = ['POST'])
+def after_input():
+    categories = postgresql.select_category()
+    input_form = request.form
+    result = model.printInputValue(input_form)
+    print(result['weight'])
+        
+    return render_template('main.html', categories=categories, result=result, scroll='Result')
 
 #입력값 Dynamic Select Box 구현을 위해 필요한 라우팅 경로.
 @app.route('/subcategory/<category>')
