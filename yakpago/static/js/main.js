@@ -62,18 +62,6 @@ document.getElementById('medicine_table').onmouseover = function() {
     document.getElementById('input_ingredients').value = medicine_names;
 }
 
-// //입력페이지 나이값 유효성 검사 함수
-// document.getElementById('input_age').onkeyup = function() {
-//     let input_age = document.getElementById('input_age');
-
-//     if (!check(input_age.value, /[0-9]/)) {
-//         document.getElementById('age_reg').style.display = "block";
-//     }
-//     else {
-//         document.getElementById('age_reg').style.display = "none";
-//     }
-// };
-
 function check(val, re) {
     if(re.test(val)) {
         return true;
@@ -100,23 +88,11 @@ document.getElementById('input_page_button').onclick = function() {
     let input_age = document.getElementById('input_age');
     let input_weight = document.getElementById('input_weight')
     medicine_names = [];
-
-    // if (input_age.value=="") {
-    //     alert("필수 사항 정보를 입력해주세요.");
-    //     input_age.focus();
-    //     return false;
-    // }
     if (input_weight.value=="") {
-        alert("필수 사항 정보를 입력해주세요.");
+        alert("체중은 필수 사항입니다.");
         input_weight.focus();
         return false;
     }
-
-    // if (input_age.value!="" & !check(input_age.value, /[0-9]/)) {
-    //     alert("나이는 숫자만 입력 가능합니다.")
-    //     input_age.focus();
-    //     return false;
-    // }
     if (input_weight.value!="" & !check(input_weight.value, /[0-9]/)) {
         alert("체중은 숫자만 입력 가능합니다.")
         input_weight.focus();
