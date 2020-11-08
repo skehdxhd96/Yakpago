@@ -162,15 +162,6 @@
                                         <option value="subcategory_all">모두 선택</option>
                                     </select>
                                 </div>
-
-                                <!--
-                                <div class="col-sm-6 form-group">
-                                    <label for="age"><span id="input_neccesary">*</span> 나이(숫자만 입력)</label>
-                                    <input type="text" placeholder="" value="" name="age" id="input_age" class="form-control input-lg"> 
-                                    <p id="age_reg">숫자만 입력해주세요.</p>
-                                </div>
-
-                                -->
                                 <div class="col-sm-6 form-group">
                                     <label for="weight"><span id="input_neccesary">*</span> 체중(숫자만 입력, 소수점 불가능)</label>
                                     <input type="text" placeholder="" value="" name="weight" id="input_weight" class="form-control input-lg">
@@ -260,6 +251,16 @@
 
                 <p class="text-center">Tell your projects awesome story. Tell your projects awesome story. Tell your
                     projects awesome story. Tell your projects awesome story.</p>
+                
+                {% if scroll %} 
+                    <script> 
+                        document.getElementById('{{ scroll }}').scrollIntoView(); 
+                        //or 
+                        document.location.hash = '#' + '{{ scroll }}'; 
+                    </script> 
+                
+                    {{result['weight']}}
+                {% endif %}
             </div>
         </div>
     </div>
