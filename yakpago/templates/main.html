@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../static/images/favicon.png">
 
-    <title>Expose</title>
+    <title>약파고: 내 손안의 작은 약국</title>
 
     <!-- Custom styles for this template -->
     <link href="../static/style.css" rel="stylesheet">
@@ -46,9 +46,10 @@
             <ul class="nav navbar-nav">
                 <li><a href="#">YAKPAGO</a></li>
                 <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Searching</a></li>
-                <li><a href="#pricing">Result</a></li>
+                <li><a href="#services">서비스</a></li>
+                <li><a href="#contact">진단하기</a></li>
+                <li><a href="#pricing">결과</a></li>
+                <li><a href="#features">지도</a></li>
 
             </ul>
 
@@ -69,10 +70,10 @@
                         <span style="color:#ffffff">YAKPAGO</span></h1>
                     <h3><span style="color:#248822"><b>Your Only Pharmacist</b></span></h3>
 
-                    <p> 바쁜 일상 속에 약국을 들리기 어려운 현대인들을 위한 ML기반 진단 시스템. 
+                    <p style="color:#0a0a0a"> 바쁜 일상 속에 약국을 들리기 어려운 현대인들을 위한 ML기반 진단 시스템. 
                         <br>회사에서도 집에서도 당신만의 약사를 만나보세요. </p>
 
-                    <p><a class="btn btn-success btn-lg">진단하기 <i class="icon icon-angle-center"></i></a></p>
+                    <p><a class="btn btn-success btn-lg" href="#contact">진단하기<i class="icon icon-angle-center"></i></a></p>
                 </div>
             </div>
         </div>
@@ -140,7 +141,7 @@
 <section class="contact" id="contact">
     <div class="container">
         <div class="row">
-            <h4 class="short text-center"><strong>당신의 정보를 입력하세요</strong></h4>
+            <h2 class="short text-center"><strong>당신의 정보를 입력하세요</strong></h2>
             (<span id="input_neccesary">*</span> 는 필수사항)<br><br>
         </div>
             <form class="clearfix" accept-charset="utf-8" method="POST" action="/">
@@ -161,11 +162,15 @@
                                         <option value="subcategory_all">모두 선택</option>
                                     </select>
                                 </div>
+
+                                <!--
                                 <div class="col-sm-6 form-group">
                                     <label for="age"><span id="input_neccesary">*</span> 나이(숫자만 입력)</label>
                                     <input type="text" placeholder="" value="" name="age" id="input_age" class="form-control input-lg"> 
                                     <p id="age_reg">숫자만 입력해주세요.</p>
                                 </div>
+
+                                -->
                                 <div class="col-sm-6 form-group">
                                     <label for="weight"><span id="input_neccesary">*</span> 체중(숫자만 입력, 소수점 불가능)</label>
                                     <input type="text" placeholder="" value="" name="weight" id="input_weight" class="form-control input-lg">
@@ -238,7 +243,9 @@
                 </div>
                 <br>
                 <div class="row">
-                    <button class="btn btn-success btn-xlg" id="input_page_button" type="submit">입력 완료</button>
+                    <div class="col text-center">
+                    <button class="btn btn-success btn-lg align-items-center" id="input_page_button" type="submit">입력 완료</button>
+                </div>
                 </div>
             </form>
     </div>
@@ -339,7 +346,7 @@
                 <!--<img data-original="images/mockup.png" src="images/mockup.png" alt="Looks great on every device"-->
                 <!--class="lazy">-->
 
-                <h2>Our <strong>Features</strong></h2>
+                
 
                 <div class="row">
                     <div class="col-md-6">
