@@ -1,3 +1,6 @@
+ /*폰트적용*/
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
 #age_reg {
     color: red;
     display: none;
@@ -20,8 +23,8 @@
     border-radius: 4px;
   }
 #search_medicine{
-    width: 20%;
-    height:40px;
+    width: 18%;
+    height:45px;
     background-color:#5cb85c;
     border:none;
     background-color:#5cb85c;
@@ -33,11 +36,15 @@
     box-sizing: border-box;
     border-radius: 4px;
   }
-  .td_medicine {
-      cursor: pointer;
-  }
-
-  /*폰트적용*/
-  @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);  
-
+.td_medicine {
+  cursor: pointer;
+}  
 html,body {font-family:nanumgothic !important;}
+#pricing_img {
+  width: 80%;
+  height: 60%;
+}
+.pricing_explain {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
