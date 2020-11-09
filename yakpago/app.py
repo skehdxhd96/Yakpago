@@ -29,9 +29,7 @@ def main_page():
 def after_input():
     categories = postgresql.select_category()
     input_form = request.form
-    result = model.printInputValue(input_form)
-    print(result['weight'])
-        
+    result = postgresql.select_item_names(model.printInputValue(input_form))
     return render_template('main.html', categories=categories, result=result, scroll='Result')
 
 #입력값 Dynamic Select Box 구현을 위해 필요한 라우팅 경로.
@@ -53,6 +51,10 @@ def subcategory(category):
 def select_medicine(medicine_name):
     names = postgresql.select_medicinename(medicine_name)
     return jsonify(names)
+
+@app.route('/test')
+def test_page():
+    return render_template("index copy.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
