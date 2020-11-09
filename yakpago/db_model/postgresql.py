@@ -48,3 +48,11 @@ def select_ingredients(item_name, ingredient_list):
         ingredient_list.append(result[0])
     
     return ingredient_list
+
+def select_item_names(item_seqs):
+    results = {}
+    for item_seq in item_seqs:
+        query = "select item_name from medicineinfo where item_seq = " + str(item_seq)
+        curl.execute(query)
+        results[item_seq] = curl.fetchone()[0]
+    return results
