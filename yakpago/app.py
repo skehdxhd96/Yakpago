@@ -17,6 +17,7 @@ def after_input():
     elif request.method=='POST':
         input_form = request.form
         result = postgresql.select_item_names(model.printInputValue(input_form))
+        # 머신러닝 모델 실행 후 추천 약품의 item_seq(약품 코드)와 item_name(약품명)을 딕셔너리 형태로 임시로 저장해 놓는 파일 생성.
         with open('static\\results.txt', 'w+t', encoding='utf-8') as f:
             json.dump(result, f, indent="\t", ensure_ascii = False)
         return render_template('main.html', categories=categories, scroll='Result')
