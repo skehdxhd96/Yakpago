@@ -21,5 +21,4 @@ def printInputValue(form):
         ingredient_list = postgresql.select_ingredients(medicine, ingredient_list)
     form_dict['ingredients'] = list(set(ingredient_list))
 
-    print(form_dict)
-    return [200301554, 200600089, 201100204, 201801991, 201905618, 202005904, 201004450, 200608043, 201706903, 199403101]
+    return [200301554, 200600089, 201100204, 201801991, 201905618, 202005904, 201004450, 200608043, 201706903, 200500986]
