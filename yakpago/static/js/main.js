@@ -106,6 +106,18 @@ window.onload = function() {
         response.json().then(function(data) {
             for (let i=3; i<6; i++) {
                 document.getElementsByClassName('panel-heading')[i%3].getElementsByTagName('p')[0].innerHTML = data[i].item_name;
+                if (document.getElementsByClassName('panel-heading')[i%3].offsetHeight>50) {
+                    document.getElementsByClassName('panel-heading')[i%3].style.height="50px";
+                    document.getElementsByClassName('text-center item-name')[i%3].style.fontSize="13px";
+                }
+                if (data[i].image_url!=null) {
+                    document.getElementsByClassName('panel-body medicine-image')[i%3].style.display="block";
+                    document.getElementsByClassName('panel-body medicine-image')[i%3].getElementsByTagName('img')[0].src=data[i].image_url;
+                }
+                else {
+                    document.getElementsByClassName('no_image')[i%3].style.display="block";
+                }
+                
             }
         });
     });

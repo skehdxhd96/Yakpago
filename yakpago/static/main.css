@@ -49,25 +49,20 @@ html,body {font-family:nanumgothic !important;}
   margin-bottom: 5px;
   font-size: 15px;
 }
-.col-md-2.table-button {
-  margin: 140px 0px;
-  padding-left: 0px;
-  padding-right: 0px;
+.table-button {
   width:auto;
   height:auto;
 }
-.col-md-4.table-col-md-4 {
-  width: 30%;
-}
-.btn.btn-light {
+.btn.btn-secondary {
   padding: 0px;
+  border-color: black;
   background-color: white;
 }
 .glyphicon.glyphicon-chevron-left::before {
-  font-size:4em;
+  font-size:3em;
 }
 .glyphicon.glyphicon-chevron-right::before {
-  font-size:4em;
+  font-size:3em;
 }
 .container.pricing-container {
   text-align: center;
@@ -76,8 +71,11 @@ html,body {font-family:nanumgothic !important;}
   padding: 0px;
   text-align: center;
 }
-.panel-heading.item-name {
-}
 .text-center.item-name {
-  font-size: 4vw;
+  font-size: 20px;
+}
+.no_image {
+  font-size: 23px;
+  font-weight: bold;
+  margin: 81.5px 0px;
 }
