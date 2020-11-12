@@ -218,20 +218,32 @@ fieldset[disabled] .btn-primary.active {
     border-color: #3E84C2;
 }
 
-.jumbotron{
+.jumbotron.map{
+    background: url(images/whiteBackground.png);
+    background-color: #ffffff;
+    margin: 40px 0;
+    padding: 40px 20px 20px 20px;
+    background-attachment: fixed;
+    height: 100px;
+
+}
+
+.jumbotron.top{
     background: url(images/medicine_2.jpg);
     color: #535252;
     background-attachment: fixed;
 }
 
-.jumbotron p{
+
+
+.jumbotron.top p{
     padding: 20px 0;
 }
 
-.jumbotron .media{
+.jumbotron.top .media{
     margin: 50px 0;
 }
-.jumbotron .media-body h1{
+.jumbotron.top.media-body h1{
     margin-top: 100px;
 }
 
