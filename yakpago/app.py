@@ -3,21 +3,24 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from db_model import postgresql
 from model import model
+import json
 
 app = Flask(__name__)
 Bootstrap(app)
 
-#입력값 받아와 model.py(모델링 코드 넣을 곳)로 넘겨줌. 확인을 위해 model.py에 printInputValue 함수를 만들어 출력해줌.
 @app.route('/', methods = ['GET', 'POST'])
-def main_page():
+def after_input():
     categories = postgresql.select_category()
 
-    if request.method=="POST":
+    if request.method=='GET':
+        return render_template('main.html', categories=categories)
+    elif request.method=='POST':
         input_form = request.form
-        result = model.printInputValue(input_form)
-        print(result)
-        
-    return render_template('main.html', categories=categories)
+        result = postgresql.select_item_names(model.printInputValue(input_form))
+        # 머신러닝 모델 실행 후 추천 약품의 item_seq(약품 코드)와 item_name(약품명)을 딕셔너리 형태로 임시로 저장해 놓는 파일 생성.
+        with open('static\\results.txt', 'w+t', encoding='utf-8') as f:
+            json.dump(result, f, indent="\t", ensure_ascii = False)
+        return render_template('main.html', categories=categories, scroll='Result')
 
 #입력값 Dynamic Select Box 구현을 위해 필요한 라우팅 경로.
 @app.route('/subcategory/<category>')
@@ -38,6 +41,37 @@ def subcategory(category):
 def select_medicine(medicine_name):
     names = postgresql.select_medicinename(medicine_name)
     return jsonify(names)
+
+#머신러닝 모델의 추천 결과 약품들의 DB 정보를 json 형태로 저장해놓은 라우팅 경로.
+@app.route('/result')
+def model_result():
+    file_data = ""
+    file_dict = {}
+    resultsObj = []
+    with open("static\\results.txt", "r", encoding='utf-8') as f: 
+        file_data = f.read() 
+        file_dict = json.loads(file_data)
+
+    resultsDBObj = postgresql.select_result_data(file_dict.keys())
+
+    for index, resultDBObj in enumerate(resultsDBObj):
+        resultObj = {}
+        resultObj['id'] = index
+        resultObj['item_seq'] = resultDBObj[0]
+        resultObj['item_name'] = resultDBObj[1]
+        resultObj['entp_name'] = resultDBObj[2]
+        resultObj['chart'] = resultDBObj[3]
+        resultObj['storage_method'] = resultDBObj[4]
+        resultObj['valid_term'] = resultDBObj[5]
+        resultObj['effect'] = resultDBObj[6]
+        resultObj['image_url'] = resultDBObj[7]
+        resultsObj.append(resultObj)
+    
+    return jsonify(resultsObj)
+
+@app.route('/test')
+def test_page():
+    return render_template("index copy.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

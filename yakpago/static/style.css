@@ -281,9 +281,12 @@ section.slider .col-md-8{
 img{
     max-width: 100%;
 }
-
-.pricing-intro{
+.pricing{
+    margin-top: 70px;
     margin-bottom: 70px;
+}
+.pricing-intro{
+    margin-bottom: 20px;
 }
 
 section.gray{
@@ -380,7 +383,10 @@ section.about .dmask{
     font-size: 17pt;
     letter-spacing: 1px;
 }
-
+.pricing-table {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
 .pricing-table .panel {
     background: #eeeeee;
 }
@@ -404,6 +410,9 @@ section.about .dmask{
 .pricing-table .panel-success .panel-heading{
     background: #468847;
     color: #ffffff;
+}
+.panel-heading .text-center{
+    margin: 0px;
 }
 .pricing-intro h2{
     margin-bottom: 20px;
@@ -543,7 +552,7 @@ section.contact{
     min-height: 400px;
     background-size:auto 100%;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
 }
 
 section.contact ul{

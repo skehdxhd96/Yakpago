@@ -48,3 +48,23 @@ def select_ingredients(item_name, ingredient_list):
         ingredient_list.append(result[0])
     
     return ingredient_list
+
+def select_item_names(item_seqs):
+    results = {}
+    for item_seq in item_seqs:
+        query = "select item_name from medicineinfo where item_seq = " + str(item_seq)
+        curl.execute(query)
+        results[item_seq] = curl.fetchone()[0]
+    return results
+
+def select_result_data(result_keys):
+    item_seqs = ", ".join(result_keys)
+    query = """
+    select info.item_seq, info.item_name, info.entp_name, info.chart, info.storage_method, info.valid_term, info.effect, image.url
+    from medicineinfo info
+	    full outer join medicine_image image on info.item_seq=image.item_seq    
+    where info.item_seq in (
+    """ + item_seqs + ");"
+    curl.execute(query)
+
+    return curl.fetchall()

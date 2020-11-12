@@ -46,11 +46,10 @@
             <ul class="nav navbar-nav">
                 <li><a href="#">YAKPAGO</a></li>
                 <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#services">서비스</a></li>
-                <li><a href="#contact">진단하기</a></li>
-                <li><a href="#pricing">결과</a></li>
+                <li><a href="#Services">서비스</a></li>
+                <li><a href="#Searching">진단하기</a></li>
+                <li><a href="#Result">결과</a></li>
                 <li><a href="#features">지도</a></li>
-
             </ul>
 
         </div>
@@ -73,14 +72,14 @@
                     <p style="color:#0a0a0a"> 바쁜 일상 속에 약국을 들리기 어려운 현대인들을 위한 ML기반 진단 시스템. 
                         <br>회사에서도 집에서도 당신만의 약사를 만나보세요. </p>
 
-                    <p><a class="btn btn-success btn-lg" href="#contact">진단하기<i class="icon icon-angle-center"></i></a></p>
+                    <p><a class="btn btn-success btn-lg" href="#Searching">진단하기<i class="icon icon-angle-center"></i></a></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container" id="services">
+<div class="container" id="Services">
     <!-- Example row of columns -->
     <div class="row features">
         <div class="col-lg-4 text-center">
@@ -132,107 +131,80 @@
 
     <br>
     <br>
-    <br>
-    <br>
 
 
 </div>
 
-<section class="contact" id="contact">
+<section class="contact" id="Searching">
     <div class="container">
         <div class="row">
             <h2 class="short text-center"><strong>당신의 정보를 입력하세요</strong></h2>
-            (<span id="input_neccesary">*</span> 는 필수사항)<br><br>
         </div>
+        <br><br>
             <form class="clearfix" accept-charset="utf-8" method="POST" action="/">
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- <div class="layer">
-                            <span class="content"> -->
-                                <div class="col-sm-12 form-group">
-                                    <label for="medicine">필요한 약품 종류를 선택하세요</label>
-                                    <select class="form-control form-control-lg" id="input_category" onchange="insertSubcategories()" name="category">
-                                        <option value="category_all">모두 선택</option>
-                                        {% for category in categories%}
-                                        <option value="{{category}}">{{category}}</option>
-                                        {% endfor %}
-                                    </select>
-                                    <br>
-                                    <select class="form-control form-control-lg" id="input_subcategory" name="subcategory" >
-                                        <option value="subcategory_all">모두 선택</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <label for="weight"><span id="input_neccesary">*</span> 체중(숫자만 입력, 소수점 불가능)</label>
-                                    <input type="text" placeholder="" value="" name="weight" id="input_weight" class="form-control input-lg">
-                                    <p id="weigt_reg">숫자만 입력해주세요.(소수점 불가능)</p>
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <label for="disease">기저질환</label>
-                                    <input type="text" placeholder="" value="" name="disease" id="input_disease" class="form-control input-lg">
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <label for="pregnant">임신 중이면 체크해주세요.</label><br>
-                                    <label class="checkbox-inline">
-                                        <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
-                                    </label>
-                                </div>
-                            <!-- </span>
-                        </div>  layer -->
+                        <div class="col-sm-12 form-group">
+                            <label for="medicine">필요한 약품 종류를 선택하세요</label>
+                            <select class="form-control form-control-lg" id="input_category" onchange="insertSubcategories()" name="category">
+                                <option value="category_all">모두 선택</option>
+                                    {% for category in categories%}
+                                    <option value="{{category}}">{{category}}</option>
+                                    {% endfor %}
+                            </select>
+                            <br>
+                            <select class="form-control form-control-lg" id="input_subcategory" name="subcategory" >
+                                <option value="subcategory_all">모두 선택</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="weight">체중(숫자만 입력, 소수점 불가능)</label>
+                            <input type="text" placeholder="" value="" name="weight" id="input_weight" class="form-control input-lg">
+                            <p id="weigt_reg">숫자만 입력해주세요.(소수점 불가능)</p>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="disease">기저질환이 있다면 입력해주세요.</label>
+                            <input type="text" placeholder="" value="" name="disease" id="input_disease" class="form-control input-lg">
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label for="pregnant">임신 중이면 체크해주세요.</label><br>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="" value="true" name="pregnant"> 임신여부
+                            </label>
+                        </div>
                     </div>  <!--col-md-6-->
                     <div class="col-md-6">
-                        <!-- <div class="layer">
-                            <span class="content"> -->
-                                <!-- <div class="row justify-content-center">
-                                    <div class="col-12 col-md-10 col-lg-8">
-                                        <div class="card-body row no-gutters align-items-center">
-                                            <div class="col-auto">
-                                                <i class="fas fa-search h4 text-body"></i>
-                                            </div>
-                                            <div class="col">
-                                                <input class="form-control form-control-lg form-control-borderless" type="text" placeholder="Search topics or keywords">
-                                            </div>
-                                            <div class="col-auto">
-                                                <button class="btn btn-lg btn-success" type="submit">Search</button>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> -->
-                                <div class="col-sm-12 form-group">
-                                    <label for="disease">현재 복용중인 약품명을 입력해주세요</label>
-                                    <input id="input_medicine" type="text" name="" value="" placeholder="약품명 입력">
-                                    <input id="search_medicine" type="button" name="" value="검색">
-                                </div>
-                                <div class="col-sm-12 form-group">
-                                    <div class="table-responsive-md" style="height:220px; overflow-y:auto">
-                                        <table class="table" id="medicine_table">
-                                            <tbody>
-                                              <tr>
-                                                <th scope="row">1</th>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row">2</th>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row">3</th>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row">4</th>
-                                              </tr>
-                                              <tr>
-                                                <th scope="row">5</th>
-                                              </tr>
-                                            </tbody>
-                                          </table>
-                                    </div>
-                                    <input style="display:none;" type="text" placeholder="" value="" name="ingredients" id="input_ingredients" class="form-control input-lg">
-                                </div>
-                            <!-- </span>
-                        </div> -->
+                        <div class="col-sm-12 form-group">
+                            <label for="disease">현재 복용중인 약품명을 입력해주세요</label>
+                            <input id="input_medicine" type="text" name="" value="" placeholder="약품명 입력">
+                            <input id="search_medicine" type="button" name="" value="검색">
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <div class="table-responsive-md" style="height:220px; overflow-y:auto">
+                                <table class="table" id="medicine_table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <input style="display:none;" type="text" placeholder="" value="" name="ingredients" id="input_ingredients" class="form-control input-lg">
+                        </div>
                     </div>
                 </div>
-                <br>
                 <div class="row">
                     <div class="col text-center">
                     <button class="btn btn-success btn-lg align-items-center" id="input_page_button" type="submit">입력 완료</button>
@@ -241,98 +213,104 @@
             </form>
     </div>
 </section>
-
-<section class="pricing" id="pricing">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 pricing-intro">
-                <h2 class="page-headline large text-center"> 결과 테이블</h2>
-
-                <p class="text-center">Tell your projects awesome story. Tell your projects awesome story. Tell your
-                    projects awesome story. Tell your projects awesome story.</p>
-                
-                {% if scroll %} 
-                    <script> 
-                        document.getElementById('{{ scroll }}').scrollIntoView(); 
-                        //or 
-                        document.location.hash = '#' + '{{ scroll }}'; 
-                    </script> 
-                
-                    {{result['weight']}}
-                {% endif %}
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container">
-
-        <div class="row pricing-table">
-            <div class="col-md-4">
-                <div class="panel panel-danger">
-                    <div class="panel-heading"><h3 class="text-center">DEV PLAN</h3></div>
-                    <div class="panel-body text-center">
-                        <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
-                    </div>
-                    <ul class="list-group list-group-flush text-center">
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
-                    </ul>
-                    <div class="panel-footer">
-                        <a class="btn btn-lg btn-block btn-danger"
-                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
-                            NOW!</a>
+<section class="pricing" id="Result">
+        {% if scroll %} 
+            <script> 
+                document.getElementById('{{ scroll }}').scrollIntoView(); 
+                //or 
+                document.location.hash = '#' + '{{ scroll }}'; 
+                document.getElementByClassName
+            </script>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 pricing-intro">
+                        <h2 class="page-headline text-center" style="margin-top:0px; margin-bottom:0px;"><strong>추천 약품 List</strong></h2>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-4">
-                <div class="panel panel-info">
-                    <div class="panel-heading"><h3 class="text-center">PRO PLAN</h3></div>
-                    <div class="panel-body text-center">
-                        <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+            <div class="container pricing-container">
+                <div class="row pricing-table">
+                    <div class="col-md-2 table-button">
+                        <button type="button" class="btn btn-light"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
                     </div>
-                    <ul class="list-group list-group-flush text-center">
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
-                    </ul>
-                    <div class="panel-footer">
-                        <a class="btn btn-lg btn-block btn-info"
-                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
-                            NOW!</a>
+                    <div class="col-md-4 table-col-md-4">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading item-name"><p class="text-center item-name"></p></div>
+                            <div class="panel-body medicine-image">
+                                <img src="https://nedrug.mfds.go.kr/pbp/cmn/itemImageDownload/151672201851500083">
+                            </div>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a class="btn btn-lg btn-block btn-danger"
+                                   href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                                    NOW!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 table-col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading item-name"><p class="text-center"></p></div>
+                            <div class="panel-body medicine-image">
+                                <img src="https://nedrug.mfds.go.kr/pbp/cmn/itemImageDownload/151248846383000107">
+                            </div>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a class="btn btn-lg btn-block btn-info"
+                                   href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                                    NOW!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 table-col-md-4">
+                        <div class="panel panel-success">
+                            <div class="panel-heading item-name"><p class="text-center"></p></div>
+                            <div class="panel-body medicine-image">
+                                <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                            </div>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a class="btn btn-lg btn-block btn-success"
+                                   href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                                    NOW!</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 table-button">
+                        <button type="button" class="btn btn-light"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
                     </div>
                 </div>
-
             </div>
-            <div class="col-md-4">
-                <div class="panel panel-success">
-                    <div class="panel-heading"><h3 class="text-center">FREE PLAN</h3></div>
-                    <div class="panel-body text-center">
-                        <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+        {% else %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6" style="padding: 40px 15px 0px 70px;">
+                        <h2 class="page-headline large"><strong>당신에게 필요한 약품은?</strong></h2>
+                        <br>
+                        <p class="pricing_explain">잘못된 약품 선택으로 인한 부작용이 걱정되시나요?</p>
+                        <p class="pricing_explain"><span style="color:#248822"><b>Yakpago의 약품 추천 시스템</b></span>을 이용한다면 모든 걱정이 사라집니다!</p>
+                        <p class="pricing_explain">지금 당장 이 버튼을 클릭하세요!</p>
+                        <br><br>
+                        <p><a class="btn btn-success btn-lg" href="#Searching">Click →</a></p>
                     </div>
-                    <ul class="list-group list-group-flush text-center">
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
-                        <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
-                    </ul>
-                    <div class="panel-footer">
-                        <a class="btn btn-lg btn-block btn-success"
-                           href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
-                            NOW!</a>
+                    <div class="col-md-6" style="text-align: center;">
+                        <img id="pricing_img" src="../static/images/chemist.jpg">
                     </div>
                 </div>
-
             </div>
-        </div>
-    </div>
-
-
+        {% endif %}
 </section>
-
-
 
 <section class="slider" id="features">
     <div class="container">
