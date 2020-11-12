@@ -213,91 +213,103 @@
             </form>
     </div>
 </section>
-<section class="pricing" id="Result">   
-    <div class="container">
+<section class="pricing" id="Result">
         {% if scroll %} 
             <script> 
                 document.getElementById('{{ scroll }}').scrollIntoView(); 
                 //or 
                 document.location.hash = '#' + '{{ scroll }}'; 
                 document.getElementByClassName
-            </script> 
-            <div class="row">
-                <div class="col-md-12 pricing-intro">
-                    <h2 class="page-headline text-center" style="margin-top:0px; margin-bottom:0px;"><strong>추천 약품 List</strong></h2>
+            </script>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 pricing-intro">
+                        <h2 class="page-headline text-center" style="margin-top:0px; margin-bottom:0px;"><strong>추천 약품 List</strong></h2>
+                    </div>
                 </div>
             </div>
-            <div class="row pricing-table">
-                <div class="col-md-4">
-                    <div class="panel panel-danger">
-                        <div class="panel-heading"><h3 class="text-center">TOP1</h3></div>
-                        <div class="panel-body text-center">
-                            <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
-                        </div>
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
-                        </ul>
-                        <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-danger"
-                                href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY NOW!</a>
+            <div class="container pricing-container">
+                <div class="row pricing-table">
+                    <div class="col-md-2 table-button">
+                        <button type="button" class="btn btn-light"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+                    </div>
+                    <div class="col-md-4 table-col-md-4">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading item-name"><p class="text-center item-name"></p></div>
+                            <div class="panel-body medicine-image">
+                                <img src="https://nedrug.mfds.go.kr/pbp/cmn/itemImageDownload/151672201851500083">
+                            </div>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a class="btn btn-lg btn-block btn-danger"
+                                   href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                                    NOW!</a>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-info">
-                        <div class="panel-heading"><h3 class="text-center">TOP2</h3></div>
-                        <div class="panel-body text-center">
-                            <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
-                        </div>
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
-                        </ul>
-                        <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-info"
-                                href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY NOW!</a>
+                    <div class="col-md-4 table-col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading item-name"><p class="text-center"></p></div>
+                            <div class="panel-body medicine-image">
+                                <img src="https://nedrug.mfds.go.kr/pbp/cmn/itemImageDownload/151248846383000107">
+                            </div>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a class="btn btn-lg btn-block btn-info"
+                                   href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                                    NOW!</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading"><h3 class="text-center">TOP3</h3></div>
-                        <div class="panel-body text-center">
-                            <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                    <div class="col-md-4 table-col-md-4">
+                        <div class="panel panel-success">
+                            <div class="panel-heading item-name"><p class="text-center"></p></div>
+                            <div class="panel-body medicine-image">
+                                <p class="lead" style="font-size:40px"><strong>$10 / month</strong></p>
+                            </div>
+                            <ul class="list-group list-group-flush text-center">
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                                <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a class="btn btn-lg btn-block btn-success"
+                                   href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY
+                                    NOW!</a>
+                            </div>
                         </div>
-                        <ul class="list-group list-group-flush text-center">
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
-                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
-                        </ul>
-                        <div class="panel-footer">
-                            <a class="btn btn-lg btn-block btn-success"
-                                href="https://creativemarket.com/artlabs/12114-Bootstrap-3.0.-pricing-tables-flat">BUY NOW!</a>
-                        </div>
+                    </div>
+                    <div class="col-md-2 table-button">
+                        <button type="button" class="btn btn-light"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
                     </div>
                 </div>
             </div>
         {% else %}
-            <div class="row">
-                <div class="col-md-6" style="padding: 40px 15px 0px 70px;">
-                    <h2 class="page-headline large"><strong>당신에게 필요한 약품은?</strong></h2>
-                    <br>
-                    <p class="pricing_explain">잘못된 약품 선택으로 인한 부작용이 걱정되시나요?</p>
-                    <p class="pricing_explain"><span style="color:#248822"><b>Yakpago의 약품 추천 시스템</b></span>을 이용한다면 모든 걱정이 사라집니다!</p>
-                    <p class="pricing_explain">지금 당장 이 버튼을 클릭하세요!</p>
-                    <br><br>
-                    <p><a class="btn btn-success btn-lg" href="#Searching">Click →</a></p>
-                </div>
-                <div class="col-md-6" style="text-align: center;">
-                    <img id="pricing_img" src="../static/images/chemist.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6" style="padding: 40px 15px 0px 70px;">
+                        <h2 class="page-headline large"><strong>당신에게 필요한 약품은?</strong></h2>
+                        <br>
+                        <p class="pricing_explain">잘못된 약품 선택으로 인한 부작용이 걱정되시나요?</p>
+                        <p class="pricing_explain"><span style="color:#248822"><b>Yakpago의 약품 추천 시스템</b></span>을 이용한다면 모든 걱정이 사라집니다!</p>
+                        <p class="pricing_explain">지금 당장 이 버튼을 클릭하세요!</p>
+                        <br><br>
+                        <p><a class="btn btn-success btn-lg" href="#Searching">Click →</a></p>
+                    </div>
+                    <div class="col-md-6" style="text-align: center;">
+                        <img id="pricing_img" src="../static/images/chemist.jpg">
+                    </div>
                 </div>
             </div>
         {% endif %}
-    </div>
 </section>
 
 <section class="slider" id="features">

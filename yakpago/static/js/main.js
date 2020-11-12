@@ -99,3 +99,16 @@ document.getElementById('input_page_button').onclick = function() {
         return false;
     }
 };
+
+//결과페이지 추천 약품 모델을 보여주는 함수.(페이지 로딩 첫 화면)
+window.onload = function() {
+    fetch('/result').then(function(response) {
+        response.json().then(function(data) {
+            for (let i=3; i<6; i++) {
+                document.getElementsByClassName('panel-heading')[i%3].getElementsByTagName('p')[0].innerHTML = data[i].item_name;
+            }
+        });
+    });
+    
+    return false;
+}

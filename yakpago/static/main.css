@@ -48,3 +48,35 @@ html,body {font-family:nanumgothic !important;}
   margin-bottom: 5px;
   font-size: 15px;
 }
+.col-md-2.table-button {
+  margin: 140px 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  width:auto;
+  height:auto;
+}
+.col-md-4.table-col-md-4 {
+  width: 30%;
+}
+.btn.btn-light {
+  padding: 0px;
+  background-color: white;
+}
+.glyphicon.glyphicon-chevron-left::before {
+  font-size:4em;
+}
+.glyphicon.glyphicon-chevron-right::before {
+  font-size:4em;
+}
+.container.pricing-container {
+  text-align: center;
+}
+.panel-body.medicine-image {
+  padding: 0px;
+  text-align: center;
+}
+.panel-heading.item-name {
+}
+.text-center.item-name {
+  font-size: 4vw;
+}
