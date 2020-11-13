@@ -1,5 +1,6 @@
  /*폰트적용*/
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+html,body {font-family:nanumgothic !important;}
 
 #age_reg {
     color: red;
@@ -36,11 +37,9 @@
     box-sizing: border-box;
     border-radius: 4px;
   }
-
 .td_medicine {
   cursor: pointer;
 }  
-html,body {font-family:nanumgothic !important;}
 #pricing_img {
   width: 80%;
   height: 60%;
@@ -49,14 +48,10 @@ html,body {font-family:nanumgothic !important;}
   margin-bottom: 5px;
   font-size: 15px;
 }
-.table-button {
-  width:auto;
-  height:auto;
-}
 .btn.btn-secondary {
   padding: 0px;
-  border-color: black;
-  background-color: white;
+  background-color:#FAF9F8;
+  color: #C8C8C8;
 }
 .glyphicon.glyphicon-chevron-left::before {
   font-size:3em;
@@ -64,18 +59,67 @@ html,body {font-family:nanumgothic !important;}
 .glyphicon.glyphicon-chevron-right::before {
   font-size:3em;
 }
-.container.pricing-container {
-  text-align: center;
-}
 .panel-body.medicine-image {
   padding: 0px;
   text-align: center;
 }
 .text-center.item-name {
   font-size: 20px;
+  font-weight: bold;
 }
 .no_image {
   font-size: 23px;
   font-weight: bold;
   margin: 81.5px 0px;
+}
+.storage-method {
+  position: relative;
+}
+.bubble 
+	{
+  display: none;
+	z-index:100;
+	position: absolute;
+	height: auto;
+	padding: 10px 10px 10px 10px;
+	background: #FFFFFF;
+	border-radius: 5px;
+	border: #7F7F7F solid 1px;
+	position: absolute;
+	font-size: 13px;
+  text-align: left;
+  top: 115%;
+  left: 30%;
+	}
+	
+	.bubble:after 
+	{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 0 16px 20px 17.5px;
+	border-color: #FFFFFF transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	top: -18.5px; 
+	left: 65%; 
+	}
+	
+	.bubble:before 
+	{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 0 16px 20px 17.5px;
+	border-color: #7F7F7F transparent;
+	display: block;
+	width: 0;
+	z-index: 0;
+	top: -20px;
+	left: 65%;
+  }
+
+.more {
+  cursor: pointer;
 }
