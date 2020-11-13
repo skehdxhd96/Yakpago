@@ -104,12 +104,15 @@ document.getElementById('input_page_button').onclick = function() {
 window.onload = function() {
     fetch('/result').then(function(response) {
         response.json().then(function(data) {
-            for (let i=3; i<6; i++) {
+            for (let i=0; i<3; i++) {
+                //item_name
                 document.getElementsByClassName('panel-heading')[i%3].getElementsByTagName('p')[0].innerHTML = data[i].item_name;
                 if (document.getElementsByClassName('panel-heading')[i%3].offsetHeight>50) {
                     document.getElementsByClassName('panel-heading')[i%3].style.height="50px";
                     document.getElementsByClassName('text-center item-name')[i%3].style.fontSize="13px";
+                    document.getElementsByClassName('text-center item-name')[i%3].style.height="28.44px";
                 }
+                //image
                 if (data[i].image_url!=null) {
                     document.getElementsByClassName('panel-body medicine-image')[i%3].style.display="block";
                     document.getElementsByClassName('panel-body medicine-image')[i%3].getElementsByTagName('img')[0].src=data[i].image_url;
@@ -117,10 +120,105 @@ window.onload = function() {
                 else {
                     document.getElementsByClassName('no_image')[i%3].style.display="block";
                 }
-                
+                //entp_name
+                let entp_name = data[i].entp_name;
+                document.getElementsByClassName('list-group-item entp-name')[i%3].innerHTML = "<i class='icon-ok text-danger'></i> " + entp_name;
+                //storage_method
+                let storage_method = data[i].storage_method;
+                if (storage_method == null) {
+                    document.getElementsByClassName('list-group-item storage-method')[i%3].style.height = "42px";
+                }
+                else if (storage_method.length <= 25) {
+                    document.getElementsByClassName('list-group-item storage-method')[i%3].innerHTML = "<i class='icon-ok text-danger'></i> " + storage_method;
+                }
+                else {
+                    document.getElementsByClassName('list-group-item storage-method')[i%3].innerHTML = "<i class='icon-ok text-danger'></i> " + 
+                        storage_method.substr(0, 22) + "...<span class='more'> ▼</span>";
+                    document.getElementsByClassName('list-group-item storage-method')[i%3].innerHTML += "<div class='bubble'>" + storage_method + "</div>";
+                    document.getElementsByClassName('list-group-item storage-method')[i%3].getElementsByClassName('more')[0].onclick = function() {
+                        if (document.getElementsByClassName('list-group-item storage-method')[i%3].getElementsByClassName('more')[0].textContent==' ▼') {
+                            document.getElementsByClassName('list-group-item storage-method')[i%3].getElementsByClassName('bubble')[0].style.display = 'block';
+                            document.getElementsByClassName('list-group-item storage-method')[i%3].getElementsByClassName('more')[0].innerHTML = ' ▲';
+                        }
+                        else {
+                            document.getElementsByClassName('list-group-item storage-method')[i%3].getElementsByClassName('bubble')[0].style.display = 'none';
+                            document.getElementsByClassName('list-group-item storage-method')[i%3].getElementsByClassName('more')[0].innerHTML = ' ▼';
+                        }
+                    };
+                }
+                //valid_term
+                let valid_term = data[i].valid_term;
+                if (valid_term == null) {
+                    document.getElementsByClassName('list-group-item valid-term')[i%3].innerHTML = "";
+                    document.getElementsByClassName('list-group-item valid-term')[i%3].style.height = "42px";
+                }
+                else if (valid_term.length <= 25) {
+                    document.getElementsByClassName('list-group-item valid-term')[i%3].innerHTML += valid_term;
+                }
+                else {
+                    document.getElementsByClassName('list-group-item valid-term')[i%3].innerHTML += valid_term.substr(0, 22) + "...<span class='more'> ▼</span>";
+                    document.getElementsByClassName('list-group-item valid-term')[i%3].innerHTML += "<div class='bubble'>" + valid_term + "</div>";
+                    document.getElementsByClassName('list-group-item valid-term')[i%3].getElementsByClassName('more')[0].onclick = function() {
+                        if (document.getElementsByClassName('list-group-item valid-term')[i%3].getElementsByClassName('more')[0].textContent==' ▼') {
+                            document.getElementsByClassName('list-group-item valid-term')[i%3].getElementsByClassName('bubble')[0].style.display = 'block';
+                            document.getElementsByClassName('list-group-item valid-term')[i%3].getElementsByClassName('more')[0].innerHTML = ' ▲';
+                        }
+                        else {
+                            document.getElementsByClassName('list-group-item valid-term')[i%3].getElementsByClassName('bubble')[0].style.display = 'none';
+                            document.getElementsByClassName('list-group-item valid-term')[i%3].getElementsByClassName('more')[0].innerHTML = ' ▼';
+                        }
+                    };
+                }
+                //chart
+                let chart = data[i].chart;
+                if (chart == null) {
+                    document.getElementsByClassName('list-group-item chart')[i%3].innerHTML = "";
+                    document.getElementsByClassName('list-group-item chart')[i%3].style.height = "42px";
+                }
+                else if (chart.length <= 25) {
+                    document.getElementsByClassName('list-group-item chart')[i%3].innerHTML += chart;
+                }
+                else {
+                    document.getElementsByClassName('list-group-item chart')[i%3].innerHTML += chart.substr(0, 22) + "...<span class='more'> ▼</span>";
+                    document.getElementsByClassName('list-group-item chart')[i%3].innerHTML += "<div class='bubble'>" + chart + "</div>";
+                    document.getElementsByClassName('list-group-item chart')[i%3].getElementsByClassName('more')[0].onclick = function() {
+                        if (document.getElementsByClassName('list-group-item chart')[i%3].getElementsByClassName('more')[0].textContent==' ▼') {
+                            document.getElementsByClassName('list-group-item chart')[i%3].getElementsByClassName('bubble')[0].style.display = 'block';
+                            document.getElementsByClassName('list-group-item chart')[i%3].getElementsByClassName('more')[0].innerHTML = ' ▲';
+                        }
+                        else {
+                            document.getElementsByClassName('list-group-item chart')[i%3].getElementsByClassName('bubble')[0].style.display = 'none';
+                            document.getElementsByClassName('list-group-item chart')[i%3].getElementsByClassName('more')[0].innerHTML = ' ▼';
+                        }
+                    };
+                }
+                //effect
+                let effect = data[i].effect;
+                if (effect == null) {
+                    document.getElementsByClassName('list-group-item effect')[i%3].innerHTML = "";
+                    document.getElementsByClassName('list-group-item effect')[i%3].style.height = "42px";
+                }
+                else if (effect.length <= 25) {
+                    document.getElementsByClassName('list-group-item effect')[i%3].innerHTML += effect;
+                }
+                else {
+                    document.getElementsByClassName('list-group-item effect')[i%3].innerHTML += effect.substr(0, 22) + "...<span class='more'> ▼</span>";
+                    document.getElementsByClassName('list-group-item effect')[i%3].innerHTML += "<div class='bubble'>" + effect + "</div>";
+                    document.getElementsByClassName('list-group-item effect')[i%3].getElementsByClassName('more')[0].onclick = function() {
+                        if (document.getElementsByClassName('list-group-item effect')[i%3].getElementsByClassName('more')[0].textContent==' ▼') {
+                            document.getElementsByClassName('list-group-item effect')[i%3].getElementsByClassName('bubble')[0].style.display = 'block';
+                            document.getElementsByClassName('list-group-item effect')[i%3].getElementsByClassName('more')[0].innerHTML = ' ▲';
+                        }
+                        else {
+                            document.getElementsByClassName('list-group-item effect')[i%3].getElementsByClassName('bubble')[0].style.display = 'none';
+                            document.getElementsByClassName('list-group-item effect')[i%3].getElementsByClassName('more')[0].innerHTML = ' ▼';
+                        }
+                    };
+                }
             }
         });
     });
     
     return false;
-}
+};
+
