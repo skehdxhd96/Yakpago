@@ -100,40 +100,76 @@ document.getElementById('input_page_button').onclick = function() {
     }
 };
 
+let click = 0;
+
+window.onload = result_medicine(click);
+
+document.getElementsByClassName('glyphicon glyphicon-chevron-right')[0].onclick = function() {
+    click++;
+    result_medicine(click);
+};
+
+document.getElementsByClassName('glyphicon glyphicon-chevron-left')[0].onclick = function() {
+    click--;
+    if (click<0) {
+        click = 0;
+    }
+    result_medicine(click);
+};
+
 //결과페이지 추천 약품 모델을 보여주는 함수.(페이지 로딩 첫 화면)
-window.onload = function() {
+function result_medicine(click) {
     fetch('/result').then(function(response) {
         response.json().then(function(data) {
-            for (let i=0; i<3; i++) {
+            let last_index = data.length;
+            if (click==parseInt(last_index/3)) {
+                document.getElementsByClassName('btn btn-secondary')[1].style.visibility = "hidden";
+            }
+            else {
+                document.getElementsByClassName('btn btn-secondary')[1].style.visibility = "visible";
+            }
+            for (let i=3*click; i<3*(click+1); i++) {
+                console.log(i);
+                if (i>=last_index) {
+                    document.getElementsByClassName('col-md-4')[i%3].style.visibility = "hidden";
+                    continue;
+                }
+                else {
+                    document.getElementsByClassName('col-md-4')[i%3].style.visibility = "visible";
+                }
                 //item_name
                 document.getElementsByClassName('panel-heading')[i%3].getElementsByTagName('p')[0].innerHTML = data[i].item_name;
-                if (document.getElementsByClassName('panel-heading')[i%3].offsetHeight>50) {
+                if (document.getElementsByClassName('text-center item-name')[i%3].textContent.length>17) {
                     document.getElementsByClassName('panel-heading')[i%3].style.height="50px";
                     document.getElementsByClassName('text-center item-name')[i%3].style.fontSize="13px";
                     document.getElementsByClassName('text-center item-name')[i%3].style.height="28.44px";
                 }
+                else {
+                    document.getElementsByClassName('text-center item-name')[i%3].style.fontSize="20px";
+                }
                 //image
                 if (data[i].image_url!=null) {
-                    document.getElementsByClassName('panel-body medicine-image')[i%3].style.display="block";
+                    document.getElementsByClassName('no_image')[i%3].style.display="none";
                     document.getElementsByClassName('panel-body medicine-image')[i%3].getElementsByTagName('img')[0].src=data[i].image_url;
+                    document.getElementsByClassName('panel-body medicine-image')[i%3].getElementsByTagName('img')[0].style.display="block";
                 }
                 else {
+                    document.getElementsByClassName('panel-body medicine-image')[i%3].getElementsByTagName('img')[0].style.display="none";
                     document.getElementsByClassName('no_image')[i%3].style.display="block";
                 }
                 //entp_name
                 let entp_name = data[i].entp_name;
-                document.getElementsByClassName('list-group-item entp-name')[i%3].innerHTML = "<i class='icon-ok text-danger'></i> " + entp_name;
+                document.getElementsByClassName('list-group-item entp-name')[i%3].innerHTML =  entp_name;
                 //storage_method
                 let storage_method = data[i].storage_method;
                 if (storage_method == null) {
                     document.getElementsByClassName('list-group-item storage-method')[i%3].style.height = "42px";
                 }
                 else if (storage_method.length <= 25) {
-                    document.getElementsByClassName('list-group-item storage-method')[i%3].innerHTML = "<i class='icon-ok text-danger'></i> " + storage_method;
+                    document.getElementsByClassName('list-group-item storage-method')[i%3].innerHTML = storage_method;
                 }
                 else {
-                    document.getElementsByClassName('list-group-item storage-method')[i%3].innerHTML = "<i class='icon-ok text-danger'></i> " + 
-                        storage_method.substr(0, 22) + "...<span class='more'> ▼</span>";
+                    document.getElementsByClassName('list-group-item storage-method')[i%3].innerHTML = storage_method.substr(0, 22) + "...<span class='more'> ▼</span>";
                     document.getElementsByClassName('list-group-item storage-method')[i%3].innerHTML += "<div class='bubble'>" + storage_method + "</div>";
                     document.getElementsByClassName('list-group-item storage-method')[i%3].getElementsByClassName('more')[0].onclick = function() {
                         if (document.getElementsByClassName('list-group-item storage-method')[i%3].getElementsByClassName('more')[0].textContent==' ▼') {
@@ -153,10 +189,10 @@ window.onload = function() {
                     document.getElementsByClassName('list-group-item valid-term')[i%3].style.height = "42px";
                 }
                 else if (valid_term.length <= 25) {
-                    document.getElementsByClassName('list-group-item valid-term')[i%3].innerHTML += valid_term;
+                    document.getElementsByClassName('list-group-item valid-term')[i%3].innerHTML = valid_term;
                 }
                 else {
-                    document.getElementsByClassName('list-group-item valid-term')[i%3].innerHTML += valid_term.substr(0, 22) + "...<span class='more'> ▼</span>";
+                    document.getElementsByClassName('list-group-item valid-term')[i%3].innerHTML = valid_term.substr(0, 22) + "...<span class='more'> ▼</span>";
                     document.getElementsByClassName('list-group-item valid-term')[i%3].innerHTML += "<div class='bubble'>" + valid_term + "</div>";
                     document.getElementsByClassName('list-group-item valid-term')[i%3].getElementsByClassName('more')[0].onclick = function() {
                         if (document.getElementsByClassName('list-group-item valid-term')[i%3].getElementsByClassName('more')[0].textContent==' ▼') {
@@ -176,10 +212,10 @@ window.onload = function() {
                     document.getElementsByClassName('list-group-item chart')[i%3].style.height = "42px";
                 }
                 else if (chart.length <= 25) {
-                    document.getElementsByClassName('list-group-item chart')[i%3].innerHTML += chart;
+                    document.getElementsByClassName('list-group-item chart')[i%3].innerHTML = chart;
                 }
                 else {
-                    document.getElementsByClassName('list-group-item chart')[i%3].innerHTML += chart.substr(0, 22) + "...<span class='more'> ▼</span>";
+                    document.getElementsByClassName('list-group-item chart')[i%3].innerHTML = chart.substr(0, 22) + "...<span class='more'> ▼</span>";
                     document.getElementsByClassName('list-group-item chart')[i%3].innerHTML += "<div class='bubble'>" + chart + "</div>";
                     document.getElementsByClassName('list-group-item chart')[i%3].getElementsByClassName('more')[0].onclick = function() {
                         if (document.getElementsByClassName('list-group-item chart')[i%3].getElementsByClassName('more')[0].textContent==' ▼') {
