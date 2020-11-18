@@ -1,5 +1,6 @@
 ### Flask.Python Stack ###
 __pycache__/
+*.pyc
 
 ### java spring ###
 .gradle
