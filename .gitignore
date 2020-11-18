@@ -1,9 +1,2 @@
 ### Flask.Python Stack ###
 __pycache__/
-*.pyc
-
-### java spring ###
-.gradle
-.idea
-servicekey.yml
-application.properties
